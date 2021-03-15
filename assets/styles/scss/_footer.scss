@@ -1,0 +1,155 @@
+footer.footer {
+	padding-top: 5em;
+	
+	@include breakpoint(medium) {
+		padding-top: 9.65em;
+	}
+	
+	.cell {
+		font-size: rem-calc(15);
+	}
+	
+	h2,
+	.menu-item-has-children > a,
+	ul.menu > li > a {
+		font-size: rem-calc(20);
+		font-family: $font-body;
+		font-weight: bold;
+		margin-bottom: .9em;
+	}
+	
+	a {
+		color: $white;
+	}
+	
+	.footer-top {
+		border-bottom: 1px solid $white;
+		
+		.left {
+			
+			a {
+				display: inline-block;
+				margin-bottom: 1.4em;
+				
+				@include breakpoint(xlarge) {
+					margin-left: -2rem;
+				}
+				
+			}
+			
+			p {
+				font-family: $font-heading;
+				font-size: rem-calc(20);
+				line-height: 1.7;
+			}
+		}
+		
+		.right {
+			
+			.address-wrap {
+				padding-bottom: 2.55em;
+			}
+			
+			.social-links {
+				display: flex;
+				flex-wrap: wrap;
+				align-items: flex-start;
+				align-content: flex-start;
+				margin-left: -6px;
+				margin-right: -6px;
+				padding-bottom: 2.55em;
+				
+				>div {
+					margin: 0 6px;
+					a {
+						width: 32px;
+						height: 32px;
+						background-color: $light-gray;
+						display: flex;
+						align-items: center;
+						justify-content: center;
+						border-radius: 100%;
+					}
+				}
+			}
+			
+		}
+		
+	}
+	
+	.footer-bottom {
+		padding-top: 3.45em;
+		
+		ul.menu {
+			flex-direction: column;
+		
+			ul.sub-menu {
+				list-style: none;
+				margin: 0;
+				padding: 0;
+				
+				li {
+					margin-bottom: .85em;
+					
+				&:last-child {
+					margin-bottom: 3.6em;
+				}
+					
+				}
+			
+			}
+		
+		}
+		
+		ul#right-footer-links {
+			li.menu-item-has-children {
+				
+			&:first-child {
+				
+				ul.sub-menu {
+					display: flex;
+					flex-wrap: wrap;
+					margin-left: -10px;
+					margin-right: -10px;
+					
+					li {
+						flex: 1 1 100%;
+						padding: 0 10px;
+						
+						@include breakpoint(medium) {
+							flex: 1 1 50%;
+						}
+						
+					}
+					
+				}
+				
+			}
+				
+			}
+		}
+		
+		.awards {
+			padding-top: 3.2em;
+			
+			.single-award {
+				margin-bottom: 2.5rem;
+			}
+			
+		}
+		
+		.copyright {
+			padding-bottom: 9.1em;
+			font-size: rem-calc(12);
+			letter-spacing: -.2px;
+			color: #AFAFAF;
+			
+			a {
+				color: #AFAFAF;
+			}
+			
+		}
+		
+	}
+	
+}

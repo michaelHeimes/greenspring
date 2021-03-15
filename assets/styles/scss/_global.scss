@@ -3,6 +3,26 @@
 Stylesheet: Global Stylesheet
 
 *************************************************/
+.grid-container.grid-1400 {
+	max-width: 1400px;
+}
+
+.gray-bg {
+	background-color: $dark-gray;
+	color: $white;	
+}
+
+.green-bg {
+	background-color: $theme-green;	
+}
+
+.blue-bg {
+	background-color: $theme-blue;	
+}
+
+.purple-bg {
+	background-color: $theme-purple;	
+}
 
 /*********************
 POSTS & CONTENT STYLES
@@ -407,13 +427,6 @@ SIDEBARS & ASIDES
 	ul {
 		margin: 0;
 	}
-}
-/*********************
-FOOTER STYLES
-*********************/
-.footer {
-	clear: both;
-	margin-top: 1em;
 }
 	
 /*********************

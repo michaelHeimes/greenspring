@@ -1,0 +1,313 @@
+header.header {
+	background-color: $white;
+	overflow: hidden;
+	transition: transform .5s ease;
+	
+	
+	.mobile-button-wrap {
+		ul.menu {
+			height: 100%;
+			display: flex;
+			justify-content: flex-end;
+			
+			li {
+				height: 100%;
+				display: flex;
+				align-items: center;
+				
+				a#menu-toggle {
+					width: 58px;
+					height: 53px;
+					position: relative;
+					right: -1.25rem;
+					background-color: $theme-green;
+					
+					span {
+						position: absolute;
+						left: 50%;
+						transform: translateX(-50%);
+						display: block;
+						width: 21px;
+						height: 3px;
+						background-color: $white;
+						
+					&:nth-child(1) {
+						top: 18px;
+					}
+
+					&:nth-child(2) {
+						top: 25px;
+					}
+					
+					&:nth-child(3) {
+						bottom: 18px;
+					}
+											
+					}
+					
+				}
+			}
+			
+		}
+	}
+	
+	ul.menu.dropdown {
+		display: flex;
+		justify-content: flex-end;
+		
+		a {
+			color: $dark-gray;
+			transition: all .25s ease;
+			
+		&:hover {
+			color: $theme-green;
+		}
+			
+		}
+	
+	}
+	
+	.logo-wrap {
+		max-width: 270px;
+		
+		@include breakpoint(xlarge) {
+			max-width: none;
+		}
+		
+		ul {
+			height: 100%;
+			li {
+				height: 100%;
+				a {
+					height: 100%;
+					display: flex;
+				}
+			}
+		}
+	}
+	
+	.top-bar-left {
+		min-height: 53px;
+		
+		@include breakpoint(large) {
+			border-right: 1px solid $dark-gray;
+		}
+	}
+	
+	.top-bar-right {
+		position: relative;
+		
+		#dropdown-nav {
+			position: relative;
+			margin-right: -1.25rem;
+			
+			> li {
+				position: relative;
+				
+				a {
+					font-size: rem-calc(13);
+					display: flex;
+					align-items: baseline;
+				}
+				
+			&.is-dropdown-submenu-parent {
+			
+			> a {
+				padding: 1.116em 1.2765em;
+				
+			&:after {
+				position: static;
+				border: 0;
+				width: 12px;
+				height: 7px;
+				margin-left: 10px;
+			}
+				
+			}
+			
+			&:first-child {
+				> a {
+					border-width: 1px 1px 0 1px;
+					border-style: solid;
+					border-color: $white;
+					
+					&:after {
+						background-image: url(../images/chev-down-gray.svg);
+					}
+					
+					&:hover {
+						border-color: $medium-gray;
+						color: $black;
+						
+					&:after {
+						background-image: url();
+					}
+						
+					}
+					
+				}
+				
+				ul.is-dropdown-submenu {
+					min-width: 100%;
+					border-top: 0;
+					
+					li {
+						a {
+							color: $black;
+							padding: .9em 1em;
+							
+						&:hover {
+							color: $black;
+							background-color: #D2E5C2;
+						}
+							
+						}
+					}
+					
+				}
+				
+			}
+
+			&:last-child {
+				> a {
+					background-color: $theme-green;
+					color: $white;
+					border-width: 1px 1px 0px 1px;
+					border-style: solid;
+					border-color: $theme-green;
+					font-weight: bold;
+					text-transform: uppercase;
+					
+					&:after {
+						background-image: url(../images/chev-down-white.svg);
+					}
+					
+					&:hover:after {
+						background-image: url();
+					}
+					
+				}
+				
+				ul.is-dropdown-submenu {
+					min-width: 100%;
+					border-top: 0;
+					border-color: $theme-green;
+					background-color: $theme-green;
+					
+					li {
+						a {
+							color: $white;
+							padding: .9em 1em;
+							
+						&:hover {
+							color: $white;
+							background-color: #33511b;
+						}
+							
+						}
+					}
+					
+				}
+				
+			}
+				
+			}
+			
+				ul.is-dropdown-submenu {
+					min-width: 100%;
+					border-top: 0;					
+				}
+				
+			}
+			
+		}
+
+		.divider {
+			position: absolute;
+			left: 0;
+			right: 0;
+			width: 100%;
+			border-bottom: 1px solid $dark-gray;
+		}
+	
+		ul#main-nav {
+			padding-top: 1.2em;
+			padding-bottom: 1.65em;
+    
+			li {
+				margin: 0 1vw;
+				
+				@include breakpoint(xlarge) {
+					margin: 0 1.2em;
+				}
+				
+			&:first-child {
+				margin-left: 0;
+			}
+				
+				a {
+					font-size: rem-calc(17);
+					font-weight: 600;
+					padding: .2em;
+				}
+				
+/*
+			&:not(:last-child) {
+				margin-right: 2.4em;
+			}
+*/
+				
+			}
+		}
+	
+	}
+	
+}
+
+.off-canvas {
+	padding: 2em 0;
+	
+	.logo {
+		display: block;
+		padding: .2em 1em;
+		margin-bottom: 1em;
+	}
+	
+	.menu {
+		li {
+			margin-bottom: .8em;
+			a {
+				color: $dark-gray;
+				padding: .2em 1em;
+			}
+			
+			.submenu {
+				padding-top: 1em;
+				padding-left: 1em;
+			}		
+			
+		}
+		
+	&.accordion-menu .is-accordion-submenu-parent:not(.has-submenu-toggle)>a {
+		display: flex;
+		justify-content: space-between;
+		align-items: baseline;
+	
+	&:after {
+		background-image: url(../images/chev-down-gray.svg);
+		position: static;
+		border: 0;
+		width: 12px;
+		height: 7px;
+		margin-left: 10px;
+	}
+		
+	}
+	
+	}
+	
+}
+
+
+
+

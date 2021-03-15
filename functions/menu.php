@@ -2,11 +2,28 @@
 // Register menus
 register_nav_menus(
 	array(
-		'main-nav'		=> __( 'The Main Menu', 'jointswp' ),		// Main nav in header
-		'offcanvas-nav'	=> __( 'The Off-Canvas Menu', 'jointswp' ),	// Off-Canvas nav
-		'footer-links'	=> __( 'Footer Links', 'jointswp' )			// Secondary nav in footer
+		'dropdown-nav'	        => __( 'The Dropdown Menu', 'jointswp' ),		// dropdown-nav
+		'main-nav'		        => __( 'The Main Menu', 'jointswp' ),		// Main nav in header
+		'offcanvas-nav'	        => __( 'The Off-Canvas Menu', 'jointswp' ),	// Off-Canvas nav
+		'left-footer-links'	    => __( 'Left Footer Links', 'jointswp' ),			// Secondary nav in footer
+		'middle-footer-links'	=> __( 'Middle Footer Links', 'jointswp' ),			// Secondary nav in footer
+		'right-footer-links'	=> __( 'Right Footer Links', 'jointswp' ),		// Secondary nav in footer
 	)
 );
+
+// The Dropdown Nav
+function joints_dropdown_nav() {
+	wp_nav_menu(array(
+		'container'			=> false,						// Remove nav container
+		'menu_id'			=> 'dropdown-nav',					// Adding custom nav id
+		'menu_class'		=> 'medium-horizontal menu',	// Adding custom nav class
+		'items_wrap'		=> '<ul id="%1$s" class="%2$s" data-responsive-menu="accordion medium-dropdown" data-hover-delay="0" data-closing-time="0">%3$s</ul>',
+		'theme_location'	=> 'dropdown-nav',					// Where it's located in the theme
+		'depth'				=> 5,							// Limit the depth of the nav
+		'fallback_cb'		=> false,						// Fallback function (see below)
+		'walker'			=> new Topbar_Menu_Walker()
+	));
+}
 
 // The Top Menu
 function joints_top_nav() {
@@ -51,13 +68,37 @@ class Off_Canvas_Menu_Walker extends Walker_Nav_Menu {
 	}
 }
 
-// The Footer Menu
-function joints_footer_links() {
+// The Left Footer Menu
+function joints_left_footer_links() {
 	wp_nav_menu(array(
 		'container'			=> 'false',				// Remove nav container
-		'menu_id'			=> 'footer-links',		// Adding custom nav id
+		'menu_id'			=> 'left-footer-links',		// Adding custom nav id
 		'menu_class'		=> 'menu',				// Adding custom nav class
-		'theme_location'	=> 'footer-links',		// Where it's located in the theme
+		'theme_location'	=> 'left-footer-links',		// Where it's located in the theme
+		'depth'				=> 0,					// Limit the depth of the nav
+		'fallback_cb'		=> ''					// Fallback function
+	));
+} /* End Footer Menu */
+
+// The Mille Footer Menu
+function joints_middle_footer_links() {
+	wp_nav_menu(array(
+		'container'			=> 'false',				// Remove nav container
+		'menu_id'			=> 'middle-footer-links',		// Adding custom nav id
+		'menu_class'		=> 'menu',				// Adding custom nav class
+		'theme_location'	=> 'middle-footer-links',		// Where it's located in the theme
+		'depth'				=> 0,					// Limit the depth of the nav
+		'fallback_cb'		=> ''					// Fallback function
+	));
+} /* End Footer Menu */
+
+// The Right Footer Menu
+function joints_right_footer_links() {
+	wp_nav_menu(array(
+		'container'			=> 'false',				// Remove nav container
+		'menu_id'			=> 'right-footer-links',		// Adding custom nav id
+		'menu_class'		=> 'menu',				// Adding custom nav class
+		'theme_location'	=> 'right-footer-links',		// Where it's located in the theme
 		'depth'				=> 0,					// Limit the depth of the nav
 		'fallback_cb'		=> ''					// Fallback function
 	));
