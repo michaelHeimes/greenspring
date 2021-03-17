@@ -1,6 +1,14 @@
 <?php
 function site_scripts() {
   global $wp_styles; // Call global $wp_styles variable to add conditional wrapper around ie stylesheet the WordPress way
+  
+    wp_enqueue_style( 'bg-slick-styles', '//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css', false ); 
+  	
+    wp_enqueue_script( 'bg-gsap', '//cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js', array(), true );
+
+    wp_enqueue_script( 'bg-gsap-scroll', '//cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/ScrollTrigger.min.js', array(), true );
+  	
+    wp_enqueue_script( 'bg-slick-js', '//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js', array( 'jquery' ), true );   
         
     // Adding scripts file in the footer
     wp_enqueue_script( 'site-js', get_template_directory_uri() . '/assets/scripts/scripts.js', array( 'jquery' ), filemtime(get_template_directory() . '/assets/scripts/js'), true );

@@ -7,6 +7,20 @@ Stylesheet: Global Stylesheet
 	max-width: 1400px;
 }
 
+.module {
+	padding-top: 2.55em;
+	padding-bottom: 2.55em;
+	
+	&.no-top-padding {
+		padding-top: 0;
+	}
+
+	&.no-bottom-padding {
+		padding-bottom: 0;
+	}
+	
+}
+
 .gray-bg {
 	background-color: $dark-gray;
 	color: $white;	
@@ -24,6 +38,69 @@ Stylesheet: Global Stylesheet
 	background-color: $theme-purple;	
 }
 
+button {
+	cursor: pointer;
+}
+
+.breadcrumbs {
+	li:not(:last-child):after {
+		content: url(../images/chev-down-gray.svg);
+	}
+}
+
+.underlined {
+	text-decoration: underline;
+}
+
+/*********************
+TYPOGRAPHY
+*********************/
+p,
+.p {
+	font-size: rem-calc(15);
+	line-height: 2.066;
+}
+
+.small-caps {
+	font-size: rem-calc(15);
+	font-weight: bold;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+}
+
+a.rm-link {
+	font-size: rem-calc(12);
+	font-weight: bold;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	transition: color .25s ease;
+	
+	&.black {
+		color: $black;
+		
+		&:hover {
+			color: $theme-green;
+		}
+		
+	}
+	
+	&.green {
+		color: $theme-green;
+		
+		&:hover {
+			color: $black;
+		}
+			
+	}
+	
+}
+
+button,
+.button {
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
 /*********************
 POSTS & CONTENT STYLES
 *********************/
@@ -38,7 +115,7 @@ POSTS & CONTENT STYLES
 
 // Post meta  
 .byline {
-	color: #999;
+	color: #000;
 	time {}
 }
 

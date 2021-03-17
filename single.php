@@ -7,13 +7,19 @@ get_header(); ?>
 			
 <div class="content">
 
-	<div class="inner-content grid-x grid-margin-x grid-padding-x">
+	<div class="inner-content">
 
-		<main class="main small-12 medium-8 large-8 cell" role="main">
+		<main class="main" role="main">
 		
 		    <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+		    
+		    	<?php if ( is_singular('team_member') ):?>
+		    		<?php get_template_part( 'parts/loop', 'single-team-member' ); ?>
+		    	<?php else:?>
 		
-		    	<?php get_template_part( 'parts/loop', 'single' ); ?>
+		    		<?php get_template_part( 'parts/loop', 'single' ); ?>
+		    	
+		    	<?php endif;?>
 		    	
 		    <?php endwhile; else : ?>
 		
@@ -22,8 +28,6 @@ get_header(); ?>
 		    <?php endif; ?>
 
 		</main> <!-- end #main -->
-
-		<?php get_sidebar(); ?>
 
 	</div> <!-- end #inner-content -->
 

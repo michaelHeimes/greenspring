@@ -8,7 +8,8 @@
 	<div class="grid-container">
 		
 		<div class="grid-x grid-padding-x">
-			<div class="cell small-12 tablet-10 tablet-offset-1 xlarge-8 xlarge-offset-2">
+			
+			<div class="left cell small-12 tablet-8">
 							
 				<header class="article-header">						
 					
@@ -25,6 +26,10 @@
 					<?php get_template_part( 'parts/loop', 'modules' ); ?>
 				</section> <!-- end article section -->
 	
+			</div>
+	
+			<div class="right cell small-12 tablet-4">
+				
 			</div>
 			
 			<footer class="article-footer cell">

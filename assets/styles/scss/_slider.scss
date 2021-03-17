@@ -1,0 +1,137 @@
+.slider.module {
+	
+	>.grid-container {
+		position: relative;
+		padding-top: 5.25em;
+		padding-bottom: 1.95em;
+		
+	&:before {
+		content: '';
+		position: absolute;
+		top: 0;
+	    left: 16.7%;
+	    right: -16.7%;
+		bottom: 0;
+		background-color: #F2F9ED;
+	}
+		
+	}
+	
+	.left {
+		.inner {
+			position: relative;
+			.green-box {
+				width: 70%;
+				height: 78%;
+				position: absolute;
+				top: -21px;
+				left: -19px;
+				background-color: $theme-green;
+			}
+			
+			.img-slider {
+				background-color: $theme-purple;
+				.img-wrap {
+					
+				}
+			}
+			
+			.slider-nav {
+				position: relative;
+				padding-top: 1.9em;
+				width: 100%;
+				display: flex;
+				justify-content: flex-end;
+				
+				button:last-child {
+					margin-left: 1.1em;
+				}
+				
+			}
+			
+		}
+	}
+	
+	.right {
+		.inner {
+
+			.text-slider {
+				
+				.slick-list {
+					padding: 0 !important;
+					margin-left: -50px;
+					margin-right: -50px;
+					
+					.text-wrap {
+						padding: 0;
+						margin: 0 50px;	
+						
+						.slide-number {
+							font-size: rem-calc(25);
+							font-family: $font-heading;
+							padding-bottom: 0.6em;
+						}
+						
+						p {
+							margin-bottom: 1em;
+						}
+						
+					}
+				
+				}
+				
+				ul.slick-dots {
+					list-style: none;
+					margin: 0;
+					padding: 0;
+					display: flex;
+					flex-wrap: wrap;
+					margin-left: -.7em;
+					margin-right: -.7em;
+					padding-top: 1.2em;
+					
+					li {
+						position: relative;
+						width: 12px;
+						height: 12px;
+						margin: .7em;
+			
+						button {
+							position: absolute;
+							font-size: 0;
+							width: 12px;
+							height: 12px;
+							
+						&:before {
+							content: '';
+							position: absolute;
+							top: 0;
+						    left: 0;
+						    right: 0;
+						    bottom: 0;
+						    margin: auto;
+							width: 8px;
+							height: 8px;
+							border-radius: 100%;
+							background-color: #bfc2bb;
+						}
+							
+						}
+						
+					&.slick-active button {
+						cursor: default;
+						&:before {
+							background-color: #656565;
+						}
+					}
+						
+					}
+					
+				}
+				
+			}
+			
+		}
+	}
+
+}

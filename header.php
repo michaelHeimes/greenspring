@@ -198,6 +198,36 @@
 						
 					</div>
 					
-					
+				<?php else:?>
 				
+				<div class="page-banner">
+					<div class="bg" style="background-image: url();"></div>
+					
+					<div class="grid-container">
+						<div class="grid-x grid-padding-x">
+							<div class="cell">
+									
+								<?php if( is_singular('team_member') ):?>
+									<h1>Get to Know <?php the_field('first_name');?></h1>
+									
+									<nav aria-label="You are here:" role="navigation">
+										<ul class="breadcrumbs">
+											<li><a href="/about/">About</a></li>
+											<li><a href="/about/team/">Team</a></li>
+											<li class="underlined">
+												<?php the_title();?>
+											</li>
+										</ul>
+									</nav>										
+									
+								<?php endif;?>
+
+
+
+							</div>
+						</div>
+					</div>
+					
+				</div>
+								
 				<?php endif;?>
