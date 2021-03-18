@@ -3,6 +3,9 @@
 Stylesheet: Global Stylesheet
 
 *************************************************/
+/*********************
+COMMON ELEMENTS
+*********************/
 .grid-container.grid-1400 {
 	max-width: 1400px;
 }
@@ -19,6 +22,45 @@ Stylesheet: Global Stylesheet
 		padding-bottom: 0;
 	}
 	
+}
+
+.page-banner {
+	padding-top: 3em;
+	padding-bottom: 3.2em;
+	position: relative;
+	
+	.grid-container {
+		position: relative;
+		color: $white;
+		
+		.grid-x {
+			min-height: 256px;
+		
+			h1,
+			a {
+				color: $white;
+			}
+		
+		}
+		
+	}
+}
+
+.bg,
+.mask {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-position: center center;
+	background-size: cover;
+	background-repeat: no-repeat;	
+}
+
+.mask {
+	background-color: #656464;
+	opacity: .8;
 }
 
 .gray-bg {
@@ -42,9 +84,31 @@ button {
 	cursor: pointer;
 }
 
+.social-links {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: flex-start;
+	align-content: flex-start;
+	margin-left: -6px;
+	margin-right: -6px;
+	
+	>div {
+		margin: 0 6px;
+		a {
+			width: 32px;
+			height: 32px;
+			background-color: $light-gray;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			border-radius: 100%;
+		}
+	}
+}
+
 .breadcrumbs {
 	li:not(:last-child):after {
-		content: url(../images/chev-down-gray.svg);
+		content: url(../images/breadcrumb-seperator.svg);
 	}
 }
 

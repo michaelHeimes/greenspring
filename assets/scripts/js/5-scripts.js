@@ -58,7 +58,6 @@
 				slidesToShow: 1,
 				arrows: false,
 				dots: true,
-				centerMode: true,
 				autoplay: false,
 				slidesToScroll: 1,
 				asNavFor: '.slider-module',
@@ -72,7 +71,71 @@
 		
 		});
 		
+	};
+	
 
+	if ( $('.di-slider').length ) {
+		
+/*
+		var maxHeight = -1;
+$('.di-card .inner').each(function() {
+  if ($(this).height() > maxHeight) {
+    maxHeight = $(this).height();
+  }
+});
+$('.di-card .inner').each(function() {
+  if ($(this).height() < maxHeight) {
+    $(this).css('margin', Math.ceil((maxHeight-$(this).height())/2) + 'px 0');
+  }
+});
+*/
+		$('.dual-insights-sliders').imagesLoaded( function() {
+			$(window).on("load resize", function() {	
+				// Get an array of all element heights
+				var elementHeights = $('.di-card').map(function() {
+					return $(this).height();
+				}).get();
+				
+				// Math.max takes a variable number of arguments
+				// `apply` is equivalent to passing each height as an argument
+				var maxHeight = Math.max.apply(null, elementHeights);
+				
+				// Set each height to the max height
+	// 			$('.di-slider .slick-list').height(maxHeight * 2);
+	
+				
+				$('.di-slider .slick-list').css('min-height', (maxHeight * 2) + 179);
+				
+				console.log(maxHeight);
+				
+			});
+		
+		});
+		
+		$('.di-slider').each(function( e,i ) {
+			
+			var $slider = $(this);
+			
+			var $buttonPrev = $($slider).next('.bottom').find('.button-prev');
+			var $buttonNext = $($slider).next('.bottom').find('.button-next');
+			
+			console.log($buttonPrev);
+					
+			$($slider).slick({
+				slidesToShow: 2,
+				slidesToScroll: 2,
+				arrows: true,
+				dots: false,
+				vertical: true,
+				infinite: true,
+				rows: 0,
+				verticalSwiping: true,
+				prevArrow: $($buttonPrev),
+				nextArrow: $($buttonNext),
+			});			
+			
+		});
+		
 	};
 	
 })(jQuery);

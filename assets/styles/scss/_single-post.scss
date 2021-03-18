@@ -1,4 +1,10 @@
 .single {
+	.page-banner {
+		margin-bottom: 4.45em;
+	}
+}
+
+.single:not(.single-team_member) {
 	
 	.article-header {
 		padding-bottom: 2.2em;
@@ -35,4 +41,111 @@
 		}
 	}
 	
+	footer.article-footer {
+		border-top: 1px solid $dark-gray;
+		border-bottom: 1px solid $dark-gray;
+		padding-top: 3.15em;
+		padding-bottom: 1.6em;
+		margin-bottom: 5.9em;
+		
+		.left,
+		.right {
+			padding-bottom: 1.5em;
+		}
+		
+		.left {
+			
+			.img-wrap {
+				padding-right: .4rem;
+				
+				>div {
+					max-width: 68px;
+					border-radius: 100%;
+					overflow: hidden;
+				}
+			}
+			
+			h3 {
+				font-size: rem-calc(23);
+				margin-bottom: .18em;
+				
+				a {
+					color: $black;
+				}
+				
+			}
+			
+			.title {
+				font-size: rem-calc(20);
+			}
+			
+		}
+		
+		.right {
+			
+			>.grid-x {
+			
+				@include breakpoint(medium) {
+					justify-content: flex-end;
+				}
+				
+				.share-label {
+					padding-right: .65rem;
+				}
+				
+			}
+			
+		}
+		
+	}
+	
+}
+
+.single.single-team_member {
+	
+	.right {
+		.inner {
+			padding-top: 1.8em;
+			border-left: 2px solid $medium-gray;
+			
+			.row {
+				display: flex;
+				align-items: flex-start;
+				padding-bottom: 2.5em;
+				
+				.pipe {
+					height: 2px;
+					background-color: $medium-gray;
+					width: 31px;
+					margin-right: 9px;
+				}
+				
+				.content-wrap {
+					margin-top: -8px;
+					font-size: rem-calc(12);
+					
+					.content-label {
+						font-weight: bold;
+						text-transform: uppercase;
+						letter-spacing: 2px;
+						padding-bottom: .75em;
+					}
+					
+					.content {
+						color: $black;
+						line-height: 2;
+						
+						a {
+							color: $black;
+						}
+						
+					}
+					
+				}
+				
+			}
+			
+		}
+	}
+		
 }

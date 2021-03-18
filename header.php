@@ -201,14 +201,20 @@
 				<?php else:?>
 				
 				<div class="page-banner">
-					<div class="bg" style="background-image: url();"></div>
+					<div class="bg" style="background-image: url(<?php the_field('background_image');?>);"></div>
+					<div class="mask"></div>
 					
 					<div class="grid-container">
-						<div class="grid-x grid-padding-x">
+						<div class="grid-x grid-padding-x align-middle">
 							<div class="cell">
+
+								<?php if( $alternative_title = get_field('alternative_title') ):?>
+									<h1><?php echo $alternative_title;?></h1>
+								<?php else:?>
+									<h1><?php the_title();?></h1>
+								<?php endif;?>
 									
 								<?php if( is_singular('team_member') ):?>
-									<h1>Get to Know <?php the_field('first_name');?></h1>
 									
 									<nav aria-label="You are here:" role="navigation">
 										<ul class="breadcrumbs">

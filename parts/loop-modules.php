@@ -2,6 +2,12 @@
 <?php while ( have_rows('modules') ) : ?> 
 	<?php the_row(); ?>
 
+	<?php if ( get_row_layout() == 'dual_insights_sliders' ) : 
+	
+		get_template_part('modules/dual_insights_sliders');
+	
+	endif;?>
+
 	<?php if ( get_row_layout() == 'gray_rectangle_cta' ) : 
 	
 		get_template_part('modules/gray_rectangle_cta');
