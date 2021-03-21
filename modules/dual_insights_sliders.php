@@ -1,4 +1,4 @@
-<section class="dual-insights-sliders module" data-equalizer data-equalize-on="small" data-equalize-on-stack="true">
+<section class="dual-insights-sliders module" >
 	<div class="grid-container">
 		<div class="grid-x grid-padding-x">
 
@@ -11,10 +11,13 @@
 						$tax = get_sub_field('insight_taxonomy');
 						$term_slug = $tax->slug;
 						$term_ID = $tax->term_id;
+						$term_name = $tax->name;
 					;?>
 					
 					<div class="di-slider-left  di-slider-wrap tax-<?php echo $term_slug;?>">
-						<h3><?php the_sub_field('heading');?></h3>
+						<h3><?php echo $term_name?> Insights</h3>
+						
+						<div class="divider cell"></div>
 						
 						<div class="di-slider">
 
@@ -35,40 +38,69 @@
 			
 						    $loop = new WP_Query( $args ); 
 						        
-						    while ( $loop->have_posts() ) : $loop->the_post();?>
+						    $counter = 0;while ( $loop->have_posts() ) : $loop->the_post();
+						    
+			                       if ($counter % 2 == 0 && $counter != 0): ?>
+			                      	</div>
+			                      </div>
+			                    <?php endif; ?>
+			                    <?php if ($counter % 2 == 0 or $counter == 0): ?>
+			                    <div>
+						    
 						    
 						        <div class="di-card"> 
-							        <div class="inner" data-equalizer-watch>
-								        
-								        <div class="left">
-									        <?php 
-											$image = get_field('archive_card_image');
-											if( !empty( $image ) ): ?>
-												<div class="bg" style="background-image: url(<?php echo esc_url($image['url']); ?>)"></div>
-											<?php endif; ?>
+							        <?php endif; ?>
+							        
+								        <article id="post-<?php the_ID(); ?>" <?php post_class('post-card'); ?> role="article">
+
+									        <div class="inner post-card-shadow">
 									        
-									        <div class="tax-icons">
+										        <div class="left" style="position: relative;">
+											        <?php 
+													$image = get_field('archive_card_image');
+													if( !empty( $image ) ): ?>
+														<div class="bg" style="background-image: url(<?php echo esc_url($image['url']); ?>)"></div>
+													<?php endif; ?>
+											        											        
+										        </div>
+										        
+										        <div class="tax-icons">
+											        
+												<?php
+											        $insight_terms = get_the_terms( $post->ID , 'insight_type' );
+											        
+											        foreach ($insight_terms as $term): 
+													if ( $term->parent != 0 ):
+													$icon = get_field('icon', $term);									    
+										        ?>		
+										        
+										        	<div class="icon">
+											        	<img src="<?php echo esc_url($icon['url']); ?>" alt="<?php echo esc_attr($icon['alt']); ?>" />
+										        	</div>
+										        
+										        <?php endif; endforeach; ?>										       
+											        
+										        </div>										  
+										        
+										        <div class="right">
+											        <h3><?php the_title();?></h3>
+											        
+											        <div>
+												        <a class="rm-link" href="<?php echo the_permalink();?>">Read More</a>
+											        </div>
+											        
+										        </div>
 										        
 									        </div>
 									        
-								        </div>
-								        
-								        <div class="right">
-									        <h3><?php the_title();?></h3>
-									        
-									        <div>
-										        <a class="rm-link" href="<?php echo the_permalink();?>">Read More</a>
-									        </div>
-									        
-								        </div>
-								        
-							        </div>
+								        </article>
+							        
+									<?php $counter++; endwhile; ?>        
+				                    </div>
+							        
 						        </div>
 								
-						    <?php endwhile;
-						
-						    wp_reset_postdata(); 
-						    ?>
+						    <?php wp_reset_postdata();?>
 	
 						</div>
 						
@@ -78,7 +110,7 @@
 								<a href="#" class="button">View More Insights</a>
 							</div>
 						
-							<div class="di-slider-nav-wrap cell auto">
+							<div class="di-slider-nav-wrap cell shrink">
 								
 								<button type="button" class="button-next">
 									<svg xmlns="http://www.w3.org/2000/svg" width="39" height="39" viewBox="0 0 39 39">
@@ -138,10 +170,13 @@
 						$tax = get_sub_field('insight_taxonomy');
 						$term_slug = $tax->slug;
 						$term_ID = $tax->term_id;
+						$term_name = $tax->name;
 					;?>
 					
-					<div class="di-slider-right di-slider-wrap tax-<?php echo $term_slug;?>">
-						<h3><?php the_sub_field('heading');?></h3>
+					<div class="di-slider-left  di-slider-wrap tax-<?php echo $term_slug;?>">
+						<h3><?php echo $term_name?> Insights</h3>
+						
+						<div class="divider cell"></div>
 						
 						<div class="di-slider">
 
@@ -162,40 +197,55 @@
 			
 						    $loop = new WP_Query( $args ); 
 						        
-						    while ( $loop->have_posts() ) : $loop->the_post();?>
+						    $counter = 0;while ( $loop->have_posts() ) : $loop->the_post();
+						    
+			                       if ($counter % 2 == 0 && $counter != 0): ?>
+			                      	</div>
+			                      </div>
+			                    <?php endif; ?>
+			                    <?php if ($counter % 2 == 0 or $counter == 0): ?>
+			                    <div>
+						    
 						    
 						        <div class="di-card"> 
-							        <div class="inner" data-equalizer-watch>
-								        
-								        <div class="left">
-									        <?php 
-											$image = get_field('archive_card_image');
-											if( !empty( $image ) ): ?>
-												<div class="bg" style="background-image: url(<?php echo esc_url($image['url']); ?>)"></div>
-											<?php endif; ?>
+							        <?php endif; ?>
+							        
+								        <article id="post-<?php the_ID(); ?>" <?php post_class('post-card'); ?> role="article">
 									        
-									        <div class="tax-icons">
+									        <div class="inner post-card-shadow">
+										        
+										        <div class="left" style="position: relative;">
+											        <?php 
+													$image = get_field('archive_card_image');
+													if( !empty( $image ) ): ?>
+														<div class="bg" style="background-image: url(<?php echo esc_url($image['url']); ?>)"></div>
+													<?php endif; ?>
+											        
+											        <div class="tax-icons">
+												        
+											        </div>
+											        
+										        </div>
+										        
+										        <div class="right">
+											        <h3><?php the_title();?></h3>
+											        
+											        <div>
+												        <a class="rm-link" href="<?php echo the_permalink();?>">Read More</a>
+											        </div>
+											        
+										        </div>
 										        
 									        </div>
 									        
-								        </div>
-								        
-								        <div class="right">
-									        <h3><?php the_title();?></h3>
-									        
-									        <div>
-										        <a class="rm-link" href="<?php echo the_permalink();?>">Read More</a>
-									        </div>
-									        
-								        </div>
-								        
-							        </div>
+								        </article>
+							        
+									<?php $counter++; endwhile; ?>        
+				                    </div>
+							        
 						        </div>
 								
-						    <?php endwhile;
-						
-						    wp_reset_postdata(); 
-						    ?>
+						    <?php wp_reset_postdata();?>
 	
 						</div>
 						
@@ -205,7 +255,7 @@
 								<a href="#" class="button">View More Insights</a>
 							</div>
 						
-							<div class="di-slider-nav-wrap cell auto">
+							<div class="di-slider-nav-wrap cell shrink">
 								
 								<button type="button" class="button-next">
 									<svg xmlns="http://www.w3.org/2000/svg" width="39" height="39" viewBox="0 0 39 39">

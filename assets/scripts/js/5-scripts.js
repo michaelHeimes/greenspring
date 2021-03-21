@@ -64,7 +64,6 @@
 				speed: 700,
 				focusOnSelect:true,
 				infinite: true,
-	
 			};
 			 
 			$('.text-slider').slick(splitSliderText);	
@@ -76,64 +75,73 @@
 
 	if ( $('.di-slider').length ) {
 		
-/*
-		var maxHeight = -1;
-$('.di-card .inner').each(function() {
-  if ($(this).height() > maxHeight) {
-    maxHeight = $(this).height();
-  }
-});
-$('.di-card .inner').each(function() {
-  if ($(this).height() < maxHeight) {
-    $(this).css('margin', Math.ceil((maxHeight-$(this).height())/2) + 'px 0');
-  }
-});
-*/
+		
 		$('.dual-insights-sliders').imagesLoaded( function() {
+			
 			$(window).on("load resize", function() {	
-				// Get an array of all element heights
-				var elementHeights = $('.di-card').map(function() {
-					return $(this).height();
-				}).get();
 				
-				// Math.max takes a variable number of arguments
-				// `apply` is equivalent to passing each height as an argument
-				var maxHeight = Math.max.apply(null, elementHeights);
+				var cardHeight = -1;
 				
-				// Set each height to the max height
-	// 			$('.di-slider .slick-list').height(maxHeight * 2);
-	
+				$('.di-card .inner').each(function() {
+					cardHeight =  cardHeight > $(this).height() ?  cardHeight : $(this).height();
+				});
 				
-				$('.di-slider .slick-list').css('min-height', (maxHeight * 2) + 179);
+				$('.di-card .inner').each(function() {
+					$(this).css('min-height',  cardHeight);
+				});    
+
 				
-				console.log(maxHeight);
+				var maxHeight = -1;
+				$('.di-slider .slick-slide').each(function() {
+					if ($(this).height() > maxHeight) {
+					    maxHeight = $(this).height();
+					}
+				});
+				
+				$('.di-slider .slick-slide').each(function() {
+					
+					if ( $(this).find('.di-card .inner').length == 2) {
+						
+					    if ($(this).height() < maxHeight) {
+					    	$(this).css('margin', Math.ceil((maxHeight-$(this).height())/2) + 'px 0');
+						}
+										
+					} else {
+						
+						if ($(this).height() < maxHeight) {
+							$(this).css('margin-top', '1px');
+							$(this).css('margin-bottom', Math.ceil((maxHeight-$(this).height())));
+						}
+					}				  
+				});
+
+			});
+
+		
+			$('.di-slider').each(function( e,i ) {
+				
+				var $slider = $(this);
+				
+				var $buttonPrev = $($slider).next('.bottom').find('.button-prev');
+				var $buttonNext = $($slider).next('.bottom').find('.button-next');
+										
+				$($slider).slick({
+					slidesToShow: 1,
+					slidesToScroll: 1,
+					arrows: true,
+					dots: false,
+					vertical: true,
+					infinite: true,
+					rows: 0,
+					verticalSwiping: true,
+					prevArrow: $($buttonPrev),
+					nextArrow: $($buttonNext),
+				});		
+
 				
 			});
+
 		
-		});
-		
-		$('.di-slider').each(function( e,i ) {
-			
-			var $slider = $(this);
-			
-			var $buttonPrev = $($slider).next('.bottom').find('.button-prev');
-			var $buttonNext = $($slider).next('.bottom').find('.button-next');
-			
-			console.log($buttonPrev);
-					
-			$($slider).slick({
-				slidesToShow: 2,
-				slidesToScroll: 2,
-				arrows: true,
-				dots: false,
-				vertical: true,
-				infinite: true,
-				rows: 0,
-				verticalSwiping: true,
-				prevArrow: $($buttonPrev),
-				nextArrow: $($buttonNext),
-			});			
-			
 		});
 		
 	};

@@ -8,7 +8,7 @@
 				<p class="h2"><?php the_sub_field('large_copy');?></p>
 				
 				<?php 
-				$link = get_field('link');
+				$link = get_sub_field('link');
 				if( $link ): 
 				    $link_url = $link['url'];
 				    $link_title = $link['title'];

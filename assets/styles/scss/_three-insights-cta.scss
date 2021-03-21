@@ -1,0 +1,42 @@
+.three-insights-cta {
+	
+	&.tax-private-wealth-management {
+		
+		.btn-wrap a {
+			background-color: $theme-green;
+		}
+		
+	}
+	
+	&.tax-corporate-retirement {
+
+		.btn-wrap a {
+			background-color: $theme-blue;
+		}	
+			
+	}
+	
+	&.tax-endowment-foundation {
+		
+		.btn-wrap a {
+			background-color: $theme-purple;
+		}	
+		
+	}
+	
+	.header {
+		padding-bottom: 2.75em;
+		
+		h2,
+		a.button {
+			margin-bottom: 1.5rem;
+		}
+		
+		.break {
+			margin-top: .35em;
+		}
+		
+	}
+	
+	
+}

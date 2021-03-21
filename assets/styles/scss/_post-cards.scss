@@ -1,0 +1,82 @@
+.post-card-shadow {
+	box-shadow: 0px 3px 6px 0px rgba(0,0,0,.15);
+}
+
+.post-card {
+	margin-bottom: 2.5rem;
+	
+	.tax-icons {
+		margin-top: -12px;
+	    position: relative;
+	    display: flex;
+	    flex-direction: row;
+	    flex-wrap: wrap;
+	    
+	    .icon {
+		    width: 38px;
+		    height: 38px;
+		    border-radius: 100%;
+		    display: flex;
+		    justify-content: center;
+		    align-items: center;
+		    margin: 5px;
+	    }
+	    
+	}
+	
+	&.insight_type-private-wealth-management {
+		a.rm-link {
+			color: $theme-green;
+		}
+		.icon {
+			background-color: $theme-green;
+		}
+	}
+	
+	&.insight_type-corporate-retirement {
+		a.rm-link {
+			color: $theme-blue;
+		}	
+		.icon {
+			background-color: $theme-blue;
+		}	
+	}
+	
+	&.insight_type-endowment-foundation {
+		a.rm-link {
+			color: $theme-purple;
+		}	
+		.icon {
+			background-color: $theme-purple;
+		}	
+	}
+	
+	.inner {
+
+				
+		.top {
+			position: relative;
+		}
+		
+		.bottom {
+			padding: 0 2.5em 2.35em 2.5em;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+						
+			.icons-wrap {
+				
+			}
+			
+			h3 {
+				padding-top: 1.65em;
+			}
+			
+			.link-wrap {
+				padding-top: .9em;
+			}
+			
+		}
+	}
+	
+}

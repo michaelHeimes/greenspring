@@ -1,0 +1,49 @@
+.three-column-ctas {
+	
+	.color-bg {
+		padding-top: 4.8em;
+		padding-bottom: 4.65em;
+	
+		.header {
+			padding-bottom: 2.05em;
+			
+			.inner {
+				padding-left: 2.45em;
+				position: relative;
+				
+				svg {
+					position: absolute;
+					left: -1em;
+				}
+				
+				h2 {
+					margin: 0;
+				}
+				
+			}
+			
+		}
+		
+		.col-wrap {
+			.cell {
+				border-left: 1px solid $dark-gray;
+				
+				.inner {
+					padding: 1em 2.45em;
+					display: flex;
+				    flex-direction: column;
+				    justify-content: space-between;
+				    height: 100%;
+				    
+				}
+				
+				p {
+					margin-bottom: .8em;
+				}
+
+			}
+		}
+		
+	}
+		
+}

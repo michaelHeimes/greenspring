@@ -1,43 +1,82 @@
 .dual-insights-sliders {
 	
+	.left-slider {
+		margin-bottom: 4em;
+
+		@include breakpoint(tablet) {
+			margin-bottom: 0;
+		}
+		
+	}
+	
 	.di-slider-wrap {
+		
+		> h3 {
+			margin-bottom: 1.1em;
+		}
 	
 		.di-slider {
-		
-			.di-card {
-				margin: 1.4em 0;
+			margin-top: 0.8em;
+			margin-bottom: .95em;
+			margin-left: -5px;
+			
+			.slick-track {
 				
-				.inner {
-					display: flex;			
-					box-shadow: 0px 3px 6px 0px rgba(0,0,0,.15);
+				.slick-slide {
+					display: flex;
+					align-items: flex-start;
+		
+					.di-card {
+						width: 100%; 
 						
-					.left {
-						position: relative;
-					    flex: 0 0 33%;
-					    background-size: cover;
-					    background-position: center center;
-					    
-					    .bg {
-						    position: absolute;
-						    top: 0;
-						    left: 0;
-						    right: 0;
-						    bottom: 0;
-					    }
-					}
-					
-					.right {
-						padding: 2.6em 1.9em 1.9em 4.2em;
-						display: flex;
-					    flex-direction: column;
-					    justify-content: space-between;
+						.inner {
+							margin: 1.4em 5px;
+							display: flex;			
+							box-shadow: 0px 3px 6px 0px rgba(0,0,0,.15);
+								
+							.left {
+								position: relative;
+							    flex: 0 0 33%;
+							    background-size: cover;
+							    background-position: center center;
+							    display: flex;
+							    justify-content: flex-end;
+							    
+							    .bg {
+								    position: absolute;
+								    top: 0;
+								    left: 0;
+								    right: 0;
+								    bottom: 0;
+							    }
+							    							    
+							}
+							
+						    .tax-icons {
+							    padding: 1em 0;
+							    margin-top: 0;
+							    margin-left: -25px;
+							    display: flex;
+							    flex-direction: column;
+							    
+							}
+							
+							.right {
+								padding: 2.6em 1.9em 1.9em 2.75em;
+								display: flex;
+							    flex-direction: column;
+							    justify-content: space-between;
+								
+								h3 {
+									margin-bottom: 2.2em;
+								}
+								
+							}
 						
-						h3 {
-							margin-bottom: 2.2em;
 						}
 						
 					}
-				
+					
 				}
 				
 			}
@@ -45,10 +84,37 @@
 		}
 		
 		.bottom {
+			justify-content: space-between;
+			
 			.di-slider-nav-wrap {
 				height: 41px;
+				
+				button {
+					margin: 0 .45em;
+				}
+				
 			}
 		}
+		
+	&.tax-private-wealth-management {
+		a.rm-link {
+			color: $theme-green;
+		}
+		
+		.bottom .btn-wrap a {
+			background-color: $theme-green;
+		}
+	}
+	
+	&.tax-corporate-retirement {
+		a.rm-link {
+			color: $theme-blue;
+		}
+		
+		.bottom .btn-wrap a {
+			background-color: $theme-blue;
+		}		
+	}
 	
 	}
 	

@@ -10,6 +10,7 @@ COMMON ELEMENTS
 	max-width: 1400px;
 }
 
+main.main,
 .module {
 	padding-top: 2.55em;
 	padding-bottom: 2.55em;
@@ -24,9 +25,14 @@ COMMON ELEMENTS
 	
 }
 
+.off-canvas-content.no-bottom-padding {
+	main.main {
+		padding-bottom: 0;
+	}
+}
+
 .page-banner {
-	padding-top: 3em;
-	padding-bottom: 3.2em;
+
 	position: relative;
 	
 	.grid-container {
@@ -35,9 +41,12 @@ COMMON ELEMENTS
 		
 		.grid-x {
 			min-height: 256px;
+			padding-top: 3em;
+			padding-bottom: 3.2em;
 		
 			h1,
 			a {
+				margin: 0;
 				color: $white;
 			}
 		
@@ -61,6 +70,15 @@ COMMON ELEMENTS
 .mask {
 	background-color: #656464;
 	opacity: .8;
+}
+
+.divider {
+	height: 1px;
+	background-color: $dark-gray
+}
+
+.light-gray-bg {
+	background-color: $light-gray;
 }
 
 .gray-bg {
