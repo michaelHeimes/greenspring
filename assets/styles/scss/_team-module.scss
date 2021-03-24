@@ -1,0 +1,31 @@
+.team-module {
+
+	.team-module-card {
+		
+		.img-wrap {
+			padding-right: .4rem;
+			
+			>div {
+				max-width: 68px;
+				border-radius: 100%;
+				overflow: hidden;
+			}
+		}
+		
+		h3 {
+			font-size: rem-calc(23);
+			margin-bottom: .18em;
+			
+			a {
+				color: $black;
+			}
+			
+		}
+		
+		.title {
+			font-size: rem-calc(20);
+		}		
+		
+	}
+	
+}

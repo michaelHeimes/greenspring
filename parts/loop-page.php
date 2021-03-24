@@ -26,7 +26,7 @@ $parent_post_slug = $post_data->post_name;
 		    	
 		    	<?php if( have_rows('left_box') ):?>
 		    	<div class="cell">
-			    	<div class="inner">
+			    	<div class="inner row-height">
 		    		<?php while ( have_rows('left_box') ) : the_row();?>
 		    		
 		    		<div class="top">
@@ -101,7 +101,7 @@ $parent_post_slug = $post_data->post_name;
 		    
 		    <section class="child-links">
 			    <div class="grid-container">
-				    <div class="grid-x grid-padding-x">
+				    <div class="grid-x grid-margin-x">
 
 					<?php
 					
@@ -111,7 +111,6 @@ $parent_post_slug = $post_data->post_name;
 					    'post_parent'    => $parent_ID,
 					    'order'          => 'ASC',
 					    'orderby'        => 'menu_order',
-					    'post__not_in' => array( $post->ID )
 					 );
 					
 					
@@ -120,8 +119,12 @@ $parent_post_slug = $post_data->post_name;
 					if ( $parent->have_posts() ) : ?>
 					
 					    <?php while ( $parent->have_posts() ) : $parent->the_post(); ?>
+					    
+					    
+					    <?php $post_link_slug = $post->post_name;?>
+					    
 						<div class="cell shrink">
-							<a class="button small small-caps" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a>
+							<a class="button small small-caps<?php if ($post_slug == $post_link_slug ):?> current-tax<?php endif;?>" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a>
 						</div>
 										
 					    <?php endwhile; ?>

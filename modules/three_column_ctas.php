@@ -19,7 +19,7 @@
 				
 				<?php if( have_rows('column_1') ):?>
 				<div class="cell">
-					<div class="inner">
+					<div class="inner row-height">
 					<?php while ( have_rows('column_1') ) : the_row();?>	
 					
 					<div class="top">
@@ -50,7 +50,7 @@
 
 				<?php if( have_rows('column_2') ):?>
 				<div class="cell">
-					<div class="inner">
+					<div class="inner row-height">
 					<?php while ( have_rows('column_2') ) : the_row();?>	
 					
 					<div class="top">
@@ -80,7 +80,7 @@
 				
 				<?php if( have_rows('column_3') ):?>
 				<div class="cell">
-					<div class="inner">
+					<div class="inner row-height">
 					<?php while ( have_rows('column_3') ) : the_row();?>	
 					
 					<div class="top">

@@ -1,10 +1,10 @@
-<section class="slider module">
+<section class="slider module color-<?php the_sub_field('color_theme');?>">
 	<div class="grid-container">
 		<div class="grid-x grid-padding-x">
 		
 			<div class="left cell small-12 medium-6">
 				<div class="inner">
-					<div class="green-box"></div>
+					<div class="bg-box"></div>
 					<div class="img-slider slider-module">
 					<?php if( have_rows('slides') ):?>
 						<?php while ( have_rows('slides') ) : the_row();?>

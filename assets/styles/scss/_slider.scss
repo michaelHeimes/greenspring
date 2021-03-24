@@ -12,7 +12,6 @@
 	    left: 16.7%;
 	    right: -16.7%;
 		bottom: 0;
-		background-color: #F2F9ED;
 	}
 		
 	}
@@ -20,17 +19,16 @@
 	.left {
 		.inner {
 			position: relative;
-			.green-box {
+			.bg-box {
 				width: 70%;
 				height: 78%;
 				position: absolute;
 				top: -21px;
 				left: -19px;
-				background-color: $theme-green;
 			}
 			
 			.img-slider {
-				background-color: $theme-purple;
+				background-color: $white;
 				.img-wrap {
 					
 				}

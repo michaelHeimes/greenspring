@@ -2,16 +2,9 @@
 	
 	.inner {
 		padding: 2.9em 4.4em;
-		height: 100%;
-		display: flex;
-		flex-direction: column;
-		justify-content: space-between;
-		
-		h2 {
-			font-size: rem-calc(33);
-		}
 		
 		a.button {
+			min-width: 218px;
 			background-color: $white;
 		}
 		
@@ -24,82 +17,13 @@
 		margin-right: -.6rem;
 		margin-left: -.6rem;
 		.cell {
-			padding-right: .6rem;
-			padding-left: .6rem;
+			margin-right: .6rem;
+			margin-left: .6rem;
 			
 			a {
 				padding: .959em 2.294em;
 			}
 			
 		}	
-	}
-}
-
-article.private-wealth {
-	.two-cta-boxes {
-		.inner {
-			background-color: rgba( $theme-green, .3 );	
-			a.button {
-				color: $theme-green;
-			}		
-		}		
-	}
-	.child-links
-	.gray-rectangle-cta {				
-		a.button {
-			padding: .959em 2.294em;
-			background-color: $theme-green;
-		}
-	}
-	.two-columns-copy-and-link {
-		a {
-			color: $theme-green;
-		}
-	}
-}
-
-article.corporate-retirement {
-	.two-cta-boxes {
-		.inner {
-			background-color: rgba( $theme-blue, .3 );	
-			a.button {
-				color: $theme-blue;
-			}		
-		}		
-	}
-	.child-links,
-	.gray-rectangle-cta {				
-		a.button {
-			padding: .959em 2.294em;
-			background-color: $theme-blue;
-		}
-	}
-	.two-columns-copy-and-link {
-		a {
-			color: $theme-blue;
-		}
-	}
-}
-
-article.endowments-foundations {
-	.two-cta-boxes {
-		.inner {
-			background-color: rgba( $theme-purple, .3 );	
-			a.button {
-				color: $theme-purple;
-			}		
-		}		
-	}
-	.child-links,
-	.gray-rectangle-cta {				
-		a.button {
-			padding: .959em 2.294em;
-			background-color: $theme-purple;
-		}
-	}
-	.two-columns-copy-and-link {
-		a {
-			color: $theme-purple;
-		}
 	}
 }

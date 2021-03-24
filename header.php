@@ -55,7 +55,7 @@
 			
 			<div class="off-canvas-content<?php if( get_field('remove_extra_space_after_last_element') ):?> no-bottom-padding<?php endif;?>" data-off-canvas-content>
 				
-				<header class="article-header">
+				<header class="banner">
 					
 					<?php if (is_front_page()):?>
 					

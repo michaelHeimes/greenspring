@@ -11,13 +11,12 @@
  
  				<div class="pre-footer-cta green-bg">
 	 				<div class="grid-container">
-		 				<div class="left cell">
-			 				
-		 				</div>
-		 				
-		 				<div class="right cell">
-			 				
-		 				</div>
+	 					<div class="grid-x grid-padding-x">
+		 					<div class="cell">
+			 					<h2 class="text-center"><?php the_field('nf_heading', 'option');?></h2>
+			 					<?php gravity_form( 2, false, false, false, '', true );?>
+		 					</div>
+	 					</div>
 	 				</div>
  				</div>
 					

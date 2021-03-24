@@ -1,0 +1,144 @@
+.page-template-page-contact {
+
+	.form .gform_wrapper form ul.gform_fields li label.gfield_label,
+	.location-wrap h4 {
+		font-size: rem-calc(20);
+		font-weight: bold;
+		color: $theme-green;
+		font-family: $font-body;
+	}
+	
+	.form {
+		padding-top: 4.55em;
+
+		[type=color], [type=date], [type=datetime-local], [type=datetime], [type=email], [type=month], [type=number], [type=password], [type=search], [type=tel], [type=text], [type=time], [type=url], [type=week], textarea {
+		border-bottom: 1px solid $black;
+		
+			&::placeholder {
+				color: $black;
+			}
+					
+		}
+		
+		textarea {
+			border: 1px solid $black;
+		}
+	
+		.gform_wrapper {
+			margin: 0; 
+			
+			form {
+				padding-top: 4.1em;
+				min-width: 100%;
+			
+				ul.gform_fields {
+					display: flex;
+					flex-wrap: wrap;
+					align-items: flex-start;
+					margin-right: -1.25rem !important;
+					margin-left: -1.25rem !important;
+					
+					.left {
+						display: flex;
+						flex-wrap: wrap;
+						
+						li {
+						
+							&:nth-child(1) {
+								flex: 1 1 100%;	
+								
+								span {
+									padding-right: 3em;
+								}
+								
+							}
+							
+							&:nth-child(2),
+							&:nth-child(3),
+							&:nth-child(4) {
+								flex: 0 1 50%;	
+								padding-right: 3em;
+							}
+						
+						}
+					}
+					
+					.right {
+					
+						ul.gfield_checkbox {
+							margin-left: -1rem;
+							margin-right: -1rem;
+							
+							li {
+								flex: 0 1 50%;
+							    margin-right: 0;
+							    padding-left: 1rem !important;
+							    padding-right: 1rem !important;
+							    
+								input[type=checkbox]:checked {
+									
+									&+label {
+										font-weight: 400;
+										
+										&:before {
+											background-color: $theme-green;
+										}
+										
+									}
+									
+								}
+								
+								label {
+									color: $black;
+									
+									&:before {
+										border: 1px solid $black;
+									}
+																	
+								}
+								
+							}
+							
+						}
+					
+					}
+								
+				}
+				
+			}
+			
+			.gform_footer {
+				margin-top: .45rem;
+				margin-bottom: 0;
+				padding-bottom: 0;
+				text-align: right;
+				padding-right: 1.25rem !important;
+				padding-left: 1.25rem !important;
+				
+				input {
+					min-width: 219px;
+				}
+				
+			}
+			
+		}
+		
+	}
+	
+	.contact {
+		.location-wrap {
+			margin-bottom: 4em;
+			
+			h2 {
+				margin-bottom: .925em;
+			}
+			
+			.info-wrap {
+			    line-height: 2;
+			    padding-bottom: 1.5em;
+			}
+			
+		}
+	}
+	
+}
