@@ -1,0 +1,110 @@
+.pre-footer-cta {
+	padding-top: 6.8em;
+	padding-bottom: 3.15em;
+	color: $white;
+	
+	h2 {
+		color: $white;
+		margin-bottom: .95em;
+	}
+	
+	[type=color], [type=date], [type=datetime-local], [type=datetime], [type=email], [type=month], [type=number], [type=password], [type=search], [type=tel], [type=text], [type=time], [type=url], [type=week], textarea {
+		border-bottom: 1px solid $white;
+		
+		&::placeholder {
+			color: $white;
+		}
+		
+	}
+	
+	.gform_wrapper.gf_browser_chrome ul.gform_fields li.gfield span.name_first, .gform_wrapper.gf_browser_chrome ul.gform_fields li.gfield span.name_last, .gform_wrapper.gf_browser_chrome ul.gform_fields li.gfield span.name_middle {
+		font-size: rem-calc(17);
+		padding: 0 40px;
+	}
+	
+	.top_label div.ginput_complex.ginput_container.gf_name_has_1, .top_label div.ginput_complex.ginput_container.gf_name_has_2, .top_label div.ginput_complex.ginput_container.gf_name_has_3 {
+		width: 100% !important;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+	}
+	
+	div.ginput_container_name span {
+		margin: 0;
+		padding: 0;
+	}
+	
+	.gform_wrapper {
+		ul.gform_fields {
+			display: flex;
+			flex-wrap: wrap;
+			align-items: end;
+			
+			> li {
+				padding-right: 0 !important;
+				
+				&.hidden_label input {
+					margin-top: 0;		
+				}
+					
+				&:nth-child(1) {
+					flex: 1 0 66.667%;
+					margin-left: -40px !important;
+				}
+				
+				&:nth-child(2) {
+					margin-right: -40px;
+					flex: 1 0 33.333%;
+					
+					.ginput_container {
+						padding: 0 40px;
+					}
+					
+				}
+		
+				&:nth-child(3) {
+					flex: 1 0 100%;
+					margin-top: 1.4em;
+					margin-bottom: 1px;
+				}
+				
+			}
+					
+			
+		}
+		
+		ul.gfield_checkbox {
+			
+			li {
+			    
+				input[type=checkbox]:checked {
+					
+					&+label {
+						
+						&:before {
+							background-color: $dark-gray;
+						}
+						
+					}
+					
+				}
+				
+			}
+			
+		}
+		
+		.gform_footer {
+			text-align: center;
+			
+			input[type="submit"] {
+				min-width: 218px;
+				background-color: transparent;
+				border: 2px solid $white;
+			}
+			
+		}
+		
+	}
+	
+	
+}

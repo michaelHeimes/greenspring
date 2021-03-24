@@ -1,4 +1,4 @@
-<article id="post-<?php the_ID(); ?>" <?php post_class('cell post-card'); ?> role="article">
+<article id="post-<?php the_ID(); ?>" <?php post_class('post-card cell small-12 medium-6 tablet-4'); ?> role="article">
     <div class="inner post-card-shadow">
         
         <div class="top">

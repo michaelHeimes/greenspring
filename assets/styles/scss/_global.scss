@@ -98,8 +98,61 @@ main.main,
 	background-color: $theme-purple;	
 }
 
-button {
+button,
+.button {
 	cursor: pointer;
+}
+
+.archive,
+.insight-grid {
+	.button.outline {
+		min-width: 300px;
+		
+		@include breakpoint(medium) {
+			min-width: 459px;
+		}
+		
+	}
+}
+
+.tax-buttons.grid-x.grid-padding-x {
+	margin-right: -.65rem;
+    margin-left: -.65rem;
+    
+    .cell {
+	    padding-right: .65rem;
+		padding-left: .65rem;
+    }
+	
+	.button {
+		letter-spacing: 2px;
+		display: flex;
+		align-items: center;
+		margin-bottom: 1rem;
+		padding: .584em 1.168em;
+		
+		.icon-wrap {
+			margin-right: .85em;
+			height: 21px;
+			width: auto;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+		
+	}
+}
+
+.private-wealth-management {
+
+}
+
+.corporate-retirement {
+
+}
+
+.endowment-foundation {
+
 }
 
 .social-links {
@@ -132,6 +185,83 @@ button {
 
 .underlined {
 	text-decoration: underline;
+}
+
+.row-height {
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+span.name_first label,
+span.name_last label {
+    position: absolute!important;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    white-space: nowrap;
+    border: 0;
+    margin: 0 !important;
+}
+
+.gform_wrapper {
+	ul.gform_fields {
+
+		ul.gfield_checkbox {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+			margin-left: -1rem;
+		    margin-right: -1rem;
+		    width: 100%;
+			
+			li {
+				margin: 0;
+			    padding-left: 1rem !important;
+			    padding-right: 1rem !important;
+				display: flex;
+				align-items: baseline;
+
+				input {
+					opacity: 0;
+					margin-right: .8em;
+					
+					&[type=checkbox]:checked {
+						
+						&+label {
+							font-weight: 400;
+						}
+						
+					}
+					
+				}
+				
+				label {
+					color: $white;
+					white-space: nowrap;
+					font-size: rem-calc(17);
+					position: relative;
+					
+					&:before {
+						content: '';
+						position: absolute;
+						top: 4px;
+						left: -29px;
+						width: 16px;
+						height: 16px;
+						background-color: $white;
+					}
+					
+				}
+				
+			}
+			
+		}
+		
+	}
 }
 
 /*********************
@@ -325,7 +455,26 @@ IMAGE GALLERY STYLES
 PAGE NAVI STYLES
 *********************/
 .page-navigation {
-	margin-top: 1rem;
+	margin-top: 5.15rem;
+	margin-bottom: 5.35em;
+		
+	.pagination {
+				
+		li span,
+		li a {
+			width: 39px;
+			height: 39px;
+			display: inline-flex;
+			justify-content: center;
+			align-items: center;
+			border-radius: 100%;
+		}
+		
+		.current {
+			border-radius: 100%;
+		}
+	}
+
 }
 
 /*********************

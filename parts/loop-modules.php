@@ -14,9 +14,21 @@
 	
 	endif;?>
 
+	<?php if ( get_row_layout() == 'heading_left_copy_right' ) : 
+	
+		get_template_part('modules/heading_left_copy_right');
+	
+	endif;?>
+
 	<?php if ( get_row_layout() == 'insight_grid' ) : 
 	
 		get_template_part('modules/insight_grid');
+	
+	endif;?>
+
+	<?php if ( get_row_layout() == 'logo_grid' ) : 
+	
+		get_template_part('modules/logo_grid');
 	
 	endif;?>
 	
@@ -32,6 +44,12 @@
 	
 	endif;?>
 
+	<?php if ( get_row_layout() == 'team' ) : 
+	
+		get_template_part('modules/team');
+	
+	endif;?>
+
 	<?php if ( get_row_layout() == 'three_column_ctas' ) : 
 	
 		get_template_part('modules/three_column_ctas');
@@ -41,6 +59,12 @@
 	<?php if ( get_row_layout() == 'three_insights_with_cta' ) : 
 	
 		get_template_part('modules/three_insights_cta');
+	
+	endif;?>
+
+	<?php if ( get_row_layout() == 'two_cta_boxes' ) : 
+	
+		get_template_part('modules/two_cta_boxes');
 	
 	endif;?>
 	

@@ -2,7 +2,7 @@
 	$tax = get_sub_field('insight_taxonomy');
 	$term_slug = $tax->slug;
 	$term_ID = $tax->term_id;
-	$term_name = $tax->name;
+	$term_name = $tax->name;	
 ;?>
 				
 <section class="three-insights-cta module tax-<?php echo $term_slug;?>">
@@ -22,7 +22,7 @@
 		
 		</div>				
 				
-		<div class="card-grid grid-x grid-padding-x small-up-1 medium-up-3 tablet-up-3" data-equalizer data-equalize-on="medium">
+		<div class="card-grid grid-x grid-padding-x" data-equalizer data-equalize-on="medium">
 
 			<?php 
 			$args = array(  

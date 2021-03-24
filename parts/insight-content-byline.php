@@ -6,7 +6,7 @@
 $insight_terms = get_the_terms( $post->ID , 'insight_type' );
 ?>
 
-<div class="byline grid-x grid-padding-x align-middle">
+<div class="byline tax-buttons grid-x grid-padding-x align-middle">
 	
 	<?php foreach ($insight_terms as $term): 
 		if ( $term->parent != 0 ):
@@ -16,12 +16,12 @@ $insight_terms = get_the_terms( $post->ID , 'insight_type' );
 		
 	<div class="cell shrink">
 		<a class="button small" aria-label="<?php echo $term->name; ?> Archive Link" href="<?php echo $link;?>">
-			<?php
-			if( !empty( $icon ) ): ?>
 			<div class="icon-wrap">
-			    <img src="<?php echo esc_url($icon['url']); ?>" alt="<?php echo esc_attr($icon['alt']); ?>" />
+				<?php
+				if( !empty( $icon ) ): ?>
+				    <img src="<?php echo esc_url($icon['url']); ?>" alt="<?php echo esc_attr($icon['alt']); ?>" />
+				<?php endif; ?>
 			</div>
-			<?php endif; ?>
 			<span class="theme-name"><?php echo $term->name; ?></span>
 		</a>
 	</div>

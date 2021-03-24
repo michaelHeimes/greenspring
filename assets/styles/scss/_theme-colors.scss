@@ -1,0 +1,355 @@
+.insight_type-private-wealth-management,
+.private-wealth,
+.private-wealth-management {
+	.two-cta-boxes {
+		.inner {
+			background-color: rgba( $theme-green, .3 );	
+			a.button {
+				color: $theme-green;
+			}		
+		}		
+	}
+	
+	.tax-buttons,
+	.child-links,
+	.gray-rectangle-cta {				
+		a.button {
+			padding: .959em 2.294em;
+			background-color: $theme-green;
+			
+			&:hover {
+				background-color: scale-color($theme-green, $lightness: -15%);
+			}
+			
+		}
+	}
+	
+	.two-columns-copy-and-link {
+		a {
+			color: $theme-green;
+			
+			&:hover {
+				color: scale-color($theme-green, $lightness: -15%);
+			}
+			
+		}
+	}
+
+	a.button.outline {
+		color: $theme-green;
+		border: 2px solid $theme-green;
+		background-color: $white;
+		
+		&:hover {
+			background-color: $theme-green;
+			color: $white;
+		}
+		
+	}
+	
+	a.rm-link {
+		color: $theme-green;
+	
+		&:hover {
+			color: scale-color($theme-green, $lightness: -15%);
+		}
+		
+	}
+	.icon {
+		background-color: $theme-green;
+	}
+		
+}
+
+body.page-child .private-wealth {
+	.child-links a.button:not(.current-tax) {
+		color: $black;
+		background-color: rgba( $theme-green, .3 );
+	}
+}
+
+.two-cta-boxes.color-green {
+	.inner {
+		background-color: rgba( $theme-green, .3 );	
+		a.button {
+			color: $theme-green;
+		}		
+	}		
+}
+
+.slider.module.color-green {
+
+	>.grid-container:before {
+		background-color: #F2F9ED;	
+	}
+	
+	.left .inner {
+		.bg-box {
+			background-color: $theme-green;
+		}
+		
+		svg {
+			g#Ellipse_35 {
+				stroke: $theme-green;
+			}
+			g#Group_96 {
+				line,
+				path {
+					stroke: $theme-green;
+				}
+			}
+			
+			g#Ellipse_34 {
+				fill: $theme-green;
+				stroke: $theme-green;
+			}
+			g#Group_123 {
+				line,
+				path {
+					stroke: $white;
+				}
+			}
+		}
+		
+	}
+	
+}
+
+
+
+.insight_type-corporate-retirement,
+.corporate-retirement {
+	.two-cta-boxes {
+		.inner {
+			background-color: rgba( $theme-blue, .3 );	
+			a.button {
+				color: $theme-blue;
+			}		
+		}		
+	}
+	
+	.tax-buttons,
+	.child-links,
+	.gray-rectangle-cta {				
+		a.button {
+			padding: .959em 2.294em;
+			background-color: $theme-blue;
+			
+			&:hover {
+				background-color: scale-color($theme-blue, $lightness: 15%);
+			}
+			
+		}
+	}
+	
+	.two-columns-copy-and-link {
+		a {
+						
+			&:hover {
+				color: scale-color($theme-blue, $lightness: 15%);
+			}
+			
+		}
+	}
+	
+	.tax-buttons a {
+		background-color: $theme-blue;
+	}
+	
+	a.button.outline {
+		color: $theme-blue;
+		border: 2px solid $theme-blue;
+		background-color: $white;
+		
+		&:hover {
+			background-color: $theme-blue;
+			color: $white;
+		}
+		
+	}
+	
+	a.rm-link {
+		color: $theme-blue;
+		
+		&:hover {
+			color: scale-color($theme-blue, $lightness: -15%);
+		}
+		
+	}	
+	.icon {
+		background-color: $theme-blue;
+	}
+	
+}
+
+body.page-child .corporate-retirement {
+	.child-links a.button:not(.current-tax) {
+		color: $black;
+		background-color: rgba( $theme-blue, .3 );
+	}
+}
+
+.two-cta-boxes.color-blue {
+	.inner {
+		background-color: rgba( $theme-blue, .3 );	
+		a.button {
+			color: $theme-blue;
+		}		
+	}		
+}
+
+.slider.module.color-blue {
+
+	>.grid-container:before {
+		background-color: #E7F3F4;	
+	}
+	
+	.left .inner {
+		.green-box {
+			background-color: $theme-blue;
+		}
+		
+		svg {
+			g#Ellipse_35 {
+				stroke: $theme-blue;
+			}
+			g#Group_96 {
+				line,
+				path {
+					stroke: $theme-blue;
+				}
+			}
+			
+			g#Ellipse_34 {
+				fill: $theme-blue;
+				stroke: $theme-blue;
+			}
+			g#Group_123 {
+				line,
+				path {
+					stroke: $white;
+				}
+			}
+		}
+		
+	}
+	
+}
+
+
+
+.insight_type-endowment-foundation,
+.endowments-foundations,
+.endowment-foundation {
+	.two-cta-boxes {
+		.inner {
+			background-color: rgba( $theme-purple, .3 );	
+			a.button {
+				color: $theme-purple;
+			}		
+		}		
+	}
+	
+	.tax-buttons,
+	.child-links,
+	.gray-rectangle-cta {				
+		a.button {
+			padding: .959em 2.294em;
+			background-color: $theme-purple;
+			
+			&:hover {
+				background-color: scale-color($theme-purple, $lightness: -15%);
+			}
+			
+		}
+	}
+	
+	.two-columns-copy-and-link {
+		a {
+			
+			&:hover {
+				color: scale-color($theme-purple, $lightness: -15%);
+			}
+
+		}
+	}
+	
+	a.button.outline {
+		color: $theme-purple;
+		border: 2px solid $theme-purple;
+		background-color: $white;
+		
+		&:hover {
+			background-color: $theme-purple;
+			color: $white;
+		}
+		
+	}
+	
+	a.rm-link {
+		color: $theme-purple;
+	
+		&:hover {
+			color: scale-color($theme-purple, $lightness: -15%);
+		}	
+	
+	}	
+	.icon {
+		background-color: $theme-purple;
+	}	
+
+}
+
+body.page-child .endowments-foundations {
+	.child-links a.button:not(.current-tax) {
+		color: $black;
+		background-color: rgba( $theme-purple, .3 );
+	}
+}
+
+.two-cta-boxes.color-purple {
+	.inner {
+		background-color: rgba( $theme-purple, .3 );	
+		a.button {
+			color: $theme-purple;
+		}		
+	}		
+}
+
+.slider.module.color-purple {
+
+	>.grid-container:before {
+		background-color: #E7F3F4;	
+	}
+	
+	.left .inner {
+		.green-box {
+			background-color: $theme-purple;
+		}
+		
+		svg {
+			g#Ellipse_35 {
+				stroke: $theme-purple;
+			}
+			g#Group_96 {
+				line,
+				path {
+					stroke: $theme-purple;
+				}
+			}
+			
+			g#Ellipse_34 {
+				fill: $theme-purple;
+				stroke: $theme-purple;
+			}
+			g#Group_123 {
+				line,
+				path {
+					stroke: $white;
+				}
+			}
+		}
+		
+	}
+	
+}

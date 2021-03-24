@@ -3,6 +3,7 @@
 	$term_slug = $tax->slug;
 	$term_ID = $tax->term_id;
 	$term_name = $tax->name;
+	$term_link = get_term_link( $term_ID );
 ;?>
 
 <section class="insight-grid module">
@@ -33,5 +34,14 @@
 		    endwhile; wp_reset_postdata();?>
 			
 		</div>
+		
+		<div class="grid-x grid-padding-x">
+			<div class="cell text-center">
+				<a class="button outline" aria-label="<?php echo $term_name; ?> Archive Link" href="<?php echo $term_link;?>">
+					View More Insights
+				</a>				
+			</div>
+		</div>
+		
 	</div>
 </section>

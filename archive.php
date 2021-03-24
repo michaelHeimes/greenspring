@@ -28,7 +28,7 @@ $post_type_object = get_post_type_object($post_type);
 					    <div class=" cell divider"></div>
 				    </div>
 			    	
-					<div class="card-grid grid-x grid-padding-x small-up-1 medium-up-3 tablet-up-3" data-equalizer data-equalize-on="medium">
+					<div class="card-grid grid-x grid-padding-x" data-equalizer data-equalize-on="medium">
 			
 				    	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 					 
@@ -36,8 +36,10 @@ $post_type_object = get_post_type_object($post_type);
 							<?php get_template_part('parts/loop', 'post-card'); ?>
 						    
 						<?php endwhile; ?>	
-		
-							<?php joints_page_navi(); ?>
+							
+							<div class="cell text-center">
+								<?php joints_page_navi(); ?>
+							</div>
 							
 						<?php else : ?>
 													

@@ -6,7 +6,7 @@
 				<?php while ( have_rows('left_column') ) : the_row();?>	
 
 				<div class="cell small-12 medium-6">
-					<div class="inner">
+					<div class="inner row-height">
 						<div class="copy-wrap">
 							<?php the_sub_field('copy');?>		
 						</div>
@@ -33,7 +33,7 @@
 				<?php while ( have_rows('right_column') ) : the_row();?>	
 
 				<div class="cell small-12 medium-6">
-					<div class="inner">
+					<div class="inner row-height">
 						<div class="copy-wrap">
 							<?php the_sub_field('copy');?>		
 						</div>

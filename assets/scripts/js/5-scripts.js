@@ -72,9 +72,8 @@
 		
 	};
 	
-
+	//Dual Insight Sliders
 	if ( $('.di-slider').length ) {
-		
 		
 		$('.dual-insights-sliders').imagesLoaded( function() {
 			
@@ -145,5 +144,23 @@
 		});
 		
 	};
+	
+	
+	// Contact Page Form
+	if ( $('body').hasClass('page-template-page-contact') ) {
+		
+		$('.form .gform_body').addClass('grid-container');
+		$('.gform_footer').wrap('<div class="form-footer-flex grid-x grid-padding-x" />');
+
+		$('.form-footer-flex').wrap('<div class="grid-container" />');
+		$('.gform_footer').addClass('cell text-right');
+		
+
+		$('.form .gform_fields').addClass('grid-x grid-padding-x');
+		$('.form .gform_fields li.left-group').wrapAll('<div class="left cell small-12 medium-6" />');
+		$('.form .gform_fields li.right-group').wrapAll('<div class="right cell small-12 medium-6" />');
+
+	};	
+	
 	
 })(jQuery);
