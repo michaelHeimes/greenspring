@@ -12,8 +12,17 @@
 	}
 	
 	p {
-		line-height: 1.625;
-		margin-bottom: .62em;
+		margin-bottom: 0;
+	
+		&.h2 {
+			line-height: 1.625;
+			margin-bottom: .05em;
+		}
+	
+	}
+	
+	.bottom {
+		padding-top: 1.9rem;
 	}
 	
 }

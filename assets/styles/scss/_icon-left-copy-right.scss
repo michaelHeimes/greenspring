@@ -1,0 +1,19 @@
+.icon-left-copy-right {
+	
+	h3 {
+		font-family: $font-body;
+		font-size: rem-calc(12);
+		font-weight: bold;
+		text-transform: uppercase;
+		letter-spacing: 2px;
+	}
+	
+	.copy-wrap {
+		p,
+		ul,
+		ol {
+			font-size: rem-calc(12);
+		}
+	}
+	
+}

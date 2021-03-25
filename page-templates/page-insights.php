@@ -34,7 +34,7 @@ get_header(); ?>
 						) );
 					?>
 					
-					<div class="tax-row grid-container <?php echo $term_slug;?>">
+					<div id="<?php echo $term_slug;?>" class="tax-row grid-container <?php echo $term_slug;?>">
 					
 						<div class="row-header tax-buttons grid-x grid-padding-x">
 							

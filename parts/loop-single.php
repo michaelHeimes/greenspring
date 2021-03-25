@@ -15,6 +15,10 @@
 					<?php if ( is_singular('insight') ):?>
 						<?php get_template_part( 'parts/insight-content', 'byline' ); ?>
 					<?php endif;?>
+
+					<?php if ( is_singular('news_post') ):?>
+						<?php get_template_part( 'parts/news-content', 'byline' ); ?>
+					<?php endif;?>
 			
 					<h1 class="entry-title single-title" itemprop="headline"><?php the_title(); ?></h1>
 					

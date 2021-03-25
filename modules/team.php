@@ -4,15 +4,19 @@
 	$term_ID = $tax->term_id;
 	$term_name = $tax->name;
 	$term_link = get_term_link( $term_ID );
-;?>
+?>
 
-<section class="team-module module">
+<section class="team-module module<?php if(get_sub_field('remove_top_padding')):?> no-top-padding<?php endif;?><?php if(get_sub_field('remove_bottom_padding')):?> no-bottom-padding<?php endif;?> <?php echo $term_slug;?>">
 	<div class="color-bg">
 		
 		<div class="grid-container">
 			<div class="grid-x grid-padding-x">
-				<h2 class="text-center"><?php the_sub_field('heading');?></h2>
+				<div class="cell">
+					<h2 class="text-center"><?php the_sub_field('heading');?></h2>
+				</div>
 			</div>
+			
+			<div class="divider"></div>
 			
 			<div class="card-grid grid-x grid-padding-x small-up-1 medium-up-3 tablet-up-3" data-equalizer data-equalize-on="medium">
 	

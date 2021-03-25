@@ -1,9 +1,13 @@
 (function($) {
 	'use strict';
 	
-	$('.menu a[href="#"]').click(function(e) {
+	$('#main-nav.menu a[href="#"]').click(function(e) {
 		e.preventDefault ? e.preventDefault() : e.returnValue = false;
-	});	
+	});
+
+	$('ul#dropdown-nav a[href="#"]').click(function(e) {
+		e.preventDefault ? e.preventDefault() : e.returnValue = false;
+	});
 	
 	$(document).on('click', 'a#menu-toggle', function(){
 		$('header.header').addClass('off-canvas-content is-open-right has-transition-push');
@@ -17,7 +21,7 @@
 	//Slider Module
 	if ( $('.slider').length ) {
 		
-		$('.img-slider').each(function( e,i ) {
+		$('.slider.module').each(function( e,i ) {
 			
 			var splitSliderImg = {
 				slidesToShow: 1,
@@ -32,12 +36,10 @@
 				prevArrow: $(".sm-slide-prev"),
 				nextArrow: $(".sm-slide-next"),
 			};
-
-			$('.img-slider').slick(splitSliderImg);
 			
-			var $square = $(this).prev('.green-box');
-			var $button = $(this).next('.slider-nav').find('button');
-			
+			var $square = $(this).find('.bg-box');
+			var $button = $(this).find('button');
+						
 			let tl = gsap.timeline({
 				paused: true,
 				yoyo: true,
@@ -45,11 +47,13 @@
 			
 			tl.to($square, {duration: .350, x: 19, y: 21})
 			  .to($square, {duration: .350, x: 0, y: 0});
-			
-			$button.on('click', function(e) {
-				tl.reversed() ? tl.play() : tl.reverse();
-			});
-		
+			  
+			$('.img-slider').slick(splitSliderImg).on({
+				beforeChange: function (event, slick, currentSlide, nextSlide) {
+					tl.play(0);
+	    		}
+	    	});
+
 		});
 		
 		$('.text-slider').each(function( e,i ) {

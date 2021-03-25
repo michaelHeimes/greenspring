@@ -232,7 +232,7 @@ $parent_post_slug = $post_data->post_name;
 		    
 		    <section class="child-links module">
 			    <div class="grid-container">
-				    <div class="grid-x grid-padding-x">
+				    <div class="grid-x grid-margin-x">
 
 					<?php
 					

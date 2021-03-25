@@ -2,6 +2,12 @@
 <?php while ( have_rows('modules') ) : ?> 
 	<?php the_row(); ?>
 
+	<?php if ( get_row_layout() == 'accordion' ) : 
+	
+		get_template_part('modules/accordion');
+	
+	endif;?>
+
 	<?php if ( get_row_layout() == 'dual_insights_sliders' ) : 
 	
 		get_template_part('modules/dual_insights_sliders');
@@ -17,6 +23,12 @@
 	<?php if ( get_row_layout() == 'heading_left_copy_right' ) : 
 	
 		get_template_part('modules/heading_left_copy_right');
+	
+	endif;?>
+
+	<?php if ( get_row_layout() == 'icon_left_copy_right' ) : 
+	
+		get_template_part('modules/icon_left_copy_right');
 	
 	endif;?>
 

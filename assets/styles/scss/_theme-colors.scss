@@ -1,3 +1,4 @@
+.jump-links,
 .insight_type-private-wealth-management,
 .private-wealth,
 .private-wealth-management {
@@ -10,6 +11,7 @@
 		}		
 	}
 	
+	.jump-link-wrap.private-wealth-management,
 	.tax-buttons,
 	.child-links,
 	.gray-rectangle-cta {				
@@ -115,8 +117,14 @@ body.page-child .private-wealth {
 	
 }
 
+.team-module.private-wealth-management .color-bg {
+	background-color: #F2F9ED;	
+}
 
 
+
+
+.jump-links,
 .insight_type-corporate-retirement,
 .corporate-retirement {
 	.two-cta-boxes {
@@ -128,6 +136,7 @@ body.page-child .private-wealth {
 		}		
 	}
 	
+	.jump-link-wrap.corporate-retirement,
 	.tax-buttons,
 	.child-links,
 	.gray-rectangle-cta {				
@@ -201,7 +210,7 @@ body.page-child .corporate-retirement {
 .slider.module.color-blue {
 
 	>.grid-container:before {
-		background-color: #E7F3F4;	
+		background-color: rgba( #376AE3, .13 );	
 	}
 	
 	.left .inner {
@@ -236,8 +245,12 @@ body.page-child .corporate-retirement {
 	
 }
 
+.team-module.corporate-retirement .color-bg {
+	background-color: rgba( #376AE3, .13 );
+}
 
 
+.jump-links,
 .insight_type-endowment-foundation,
 .endowments-foundations,
 .endowment-foundation {
@@ -250,6 +263,7 @@ body.page-child .corporate-retirement {
 		}		
 	}
 	
+	.jump-link-wrap.endowment-foundation,
 	.tax-buttons,
 	.child-links,
 	.gray-rectangle-cta {				
@@ -352,4 +366,8 @@ body.page-child .endowments-foundations {
 		
 	}
 	
+}
+
+.team-module.endowments-foundations .color-bg {
+	background-color: #E7F3F4;
 }

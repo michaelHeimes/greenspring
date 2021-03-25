@@ -44,16 +44,16 @@ CSS file.
 @include foundation-drilldown-menu;
 @include foundation-dropdown;
 @include foundation-dropdown-menu;
-@include foundation-responsive-embed;
-@include foundation-label;
-@include foundation-media-object;
+// @include foundation-responsive-embed;
+// @include foundation-label;
+// @include foundation-media-object;
 @include foundation-off-canvas;
 // @include foundation-orbit;
 @include foundation-pagination;
 // @include foundation-progress-bar;
 // @include foundation-slider;
 @include foundation-sticky;
-@include foundation-reveal;
+// @include foundation-reveal;
 // @include foundation-switch;
 // @include foundation-table;
 // @include foundation-tabs;
@@ -88,3 +88,5 @@ CSS file.
 @import "contact-page";
 @import "logo-grid";
 @import "team-module";
+@import "icon-left-copy-right";
+@import "accordion";

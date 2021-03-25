@@ -1,0 +1,60 @@
+.accordion.module {
+	
+	h2 {
+		margin-bottom: .92em;
+	}
+	
+	.accordion-title {
+		border-top: 1px solid $dark-gray;
+		display: flex;
+	    align-items: center;
+	    justify-content: space-between;
+	    
+	&:hover {
+		color: $black;
+	}
+	    
+	    svg {
+		    margin-left: 3rem;
+	    }
+		
+	&:before {
+		content: '';
+	}
+
+		svg {
+			min-width: 39px;
+			min-height: 39px;
+			transition: all .3s ease;
+			g#Ellipse_34 {
+				fill: $white;
+				stroke: $theme-green;
+				transition: all .3s ease;
+			}
+			path#Path_35 {
+				stroke: $theme-green;
+				transition: all .3s ease;
+			}
+		}
+	
+	&[aria-expanded="true"] {
+		
+		svg {
+			transform: rotateX(180deg);
+		
+			g#Ellipse_34 {
+				fill: $theme-green;
+				stroke: $theme-green;
+			}
+			
+			path#Path_35 {
+				stroke: $white;
+			}
+			
+		}
+		
+	}
+		
+	}
+	
+}
