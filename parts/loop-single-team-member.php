@@ -23,7 +23,7 @@
 						
 						<div class="cell auto">							
 							<h1 class="entry-title single-title" itemprop="headline"><?php the_title(); ?></h1>
-							<div><?php the_field('title');?></div>
+							<div class="job-title"><?php the_field('title');?></div>
 						</div>
 				</header> <!-- end article header -->
 				

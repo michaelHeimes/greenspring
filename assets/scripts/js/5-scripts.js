@@ -15,7 +15,6 @@
 
 	$(document).on('click', '.js-off-canvas-overlay', function(){
 		$('header.header').removeClass('off-canvas-content is-open-right has-transition-push');
-		console.log("loaded");
 	});	
 	
 	//Slider Module
@@ -165,6 +164,197 @@
 		$('.form .gform_fields li.right-group').wrapAll('<div class="right cell small-12 medium-6" />');
 
 	};	
+	
+	
+	
+	// Team Filter
+	if ($('body').hasClass('post-type-archive-team_member')) {
+		
+/*
+		//Hide all filter buttons except for Status: Active
+		$('.buttons-group').not('#status-dropdown').slideUp(0).css('opacity', '0');
+		
+		//Make filter show BOTH Active and Realized as default with Status Filter open
+		$('.filter-group.status .show-filter').attr('data-click-state', '1');
+		$('.filter-group.status .show-filter').addClass('open');
+		$('.grid-filter button#filter-active').addClass('active');
+		$('.company-cards-wrap > .single-company-card:not([data-status=".active."])').hide();
+		
+*/
+		//Filter Animations
+/*
+		$('.filter-group').on('click', 'button.show-filter', function() {
+			   
+			var $filterShow = $(this);
+							
+			var $gridFilter = $(this).parents('.filter-group').find('.buttons-group');
+											
+			if($(this).attr('data-click-state') == 1) {
+				$(this).attr('data-click-state', 0);
+				$($gridFilter).animate({ opacity: 0 }, 250);
+				$(this).removeClass('open');
+				$($gridFilter).slideUp(300);
+		      }
+		    else {
+			    $(this).addClass('open');
+			    $(this).attr('data-click-state', 1);
+				$($gridFilter).slideDown(300);
+				$($gridFilter).animate({ opacity: 1 }, 250);
+		    }
+		});		
+*/	
+
+		/**
+		*Logo Card Heights
+		*/
+
+/*
+		var setHeight = function() {
+
+			var $card = $('.company-cards-wrap .single-company-card');				
+			var $cardWidth = $($card).width();
+							
+			$($card).css('min-height', $cardWidth);
+			
+		};
+			
+		$('.canvas-wrapper').imagesLoaded( function() {
+			setHeight();
+		});
+		
+		$(window).resize(function() {
+			setHeight();
+		});
+*/
+		
+		
+		/**
+		 * JS Filtering
+		 * filter porfolio items
+		 * @param  {jQuery Object} query_type
+		 * @param  {jQuery Object} query_industry
+		 * @param  {jQuery Object} query_status
+		 * @param  {jQuery Object} query_catslyst
+		 * @param  {jQuery Object} query_ownership
+		 * @return nothing
+		 */
+		 
+		 
+		var $filter_team = function(query_type) {
+			if (query_type == 'all') query_type = '';
+
+
+			if ( query_type.length > 0) {
+
+				var items = $('.card-grid > .post-card');
+				
+				if (items) {
+					items.each(function(index, el) {
+						var type_match = false;
+						var item = $(this);
+
+						// type
+						if (query_type.length > 0) {
+							if (query_type instanceof jQuery) {
+								// jquery object check
+								var item_type = item.data('type').toLowerCase();
+								query_type.each(function(index, el) {
+									var term = $(this).data('term').toLowerCase();
+									if (item_type.indexOf('.'+term+'.') !== -1 || term.length == 0) {
+										type_match = true;
+									}
+								});
+							} else {
+								// string check
+								var item_type = item.data('type').toLowerCase();
+								if (item_type.indexOf('.'+query_type+'.') !== -1 || query_type.length == 0) {
+									type_match = true;
+								}
+							}
+						} else {
+							type_match = true;
+						}
+						
+						if (type_match) {
+							let _item = $(this);
+							_item.show(700).promise().done( function(){ 
+								_item.css('opacity', '');
+							});								
+						} else {
+							$(this).hide(500);
+						}
+						
+					}).promise().done( function(){ 
+						$(window).trigger('grid-update');
+					});
+				}
+
+			} else {
+				$('.card-grid > .post-card').show(700).promise().done( function(){ 
+					$(window).trigger('grid-update');
+				});
+			}
+		}
+
+		// remove all filters			
+/*
+		$(document).on('click', 'button.clear-filters', function(event) {
+			event.preventDefault();
+			
+			$(this).fadeOut(0);
+
+			$('.filter-group-wrap .grid-filter button.filter-btn').removeClass('active');
+
+			var query_type = $('.filter-group-wrap .grid-filter button.active[data-tax="type"]');
+			
+			if ($('.company-cards-wrap').length > 0) {
+				$filter_team(query_type, query_industry, query_status, query_catalyst, query_ownership);
+			}			
+
+		});
+*/
+
+		// filter the grid on nav click
+		$(document).on('click', '.filter-buttons button.filter-btn', function(event) {
+			
+			event.preventDefault();
+
+			// which filter are we seeing mobile/desktop
+			let post_filter = $('.post-filter');
+
+			if (post_filter.length > 0) {
+
+				if ($(this).hasClass('active')) {
+					$(this).removeClass('active');
+				} else {
+					$(this).addClass('active');				
+				}
+			
+				var query_type = post_filter.find('button.active[data-tax="type"]');
+				
+				if ($('.card-grid').length > 0) {
+					$filter_team(query_type);
+				}	
+
+			}	
+
+		});
+		
+
+		// event after grid is filtered
+/*
+		$(window).on('grid-update', function(event) {
+			$(document).trigger('blazy-revalidate');
+
+			$('.filter-group-wrap .grid-filter button.filter-btn').not(this).prop('disabled', false);
+
+			$(window).trigger('equal-watch');
+		});
+*/
+
+
+	}
+
 	
 	
 })(jQuery);

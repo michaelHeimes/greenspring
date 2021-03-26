@@ -76,3 +76,16 @@ function my_custom_styles( $init_array ) {
 } 
 // Attach callback to 'tiny_mce_before_init' 
 add_filter( 'tiny_mce_before_init', 'my_custom_styles' );
+
+
+// Change posts numbers for team members
+function my_cptui_change_posts_per_page( $query ) {
+    if ( is_admin() || ! $query->is_main_query() ) {
+       return;
+    }
+
+    if ( is_post_type_archive( 'team_member' ) ) {
+       $query->set( 'posts_per_page', 99999 );
+    }
+}
+add_filter( 'pre_get_posts', 'my_cptui_change_posts_per_page' );

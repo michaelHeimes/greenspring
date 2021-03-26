@@ -5,6 +5,10 @@
 .post-card {
 	margin-bottom: 2.5rem;
 	
+	a {
+		color: $black;
+	}
+	
 	.tax-icons {
 		margin-top: -12px;
 	    position: relative;
@@ -51,5 +55,11 @@
 			
 		}
 	}
+	
+&.type-news_post {
+	.inner .bottom h3 {
+    	padding-top: 2.7em;
+    }
+}
 	
 }

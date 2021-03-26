@@ -1,10 +1,32 @@
 <?php
-global $wp;
-$current_url = home_url( add_query_arg( array(), $wp->request ) );	
+// get object for archives
+$archive_object = get_queried_object();
+
+// get background image for CPT Archive from the page with the matching slug
+$cpt_slug = $archive_object->name;
+$post_type_object = get_post_type_object($cpt_slug);
+$rewrite_slug  = $post_type_object->rewrite['slug'];
+$source_page = get_page_by_path($rewrite_slug);
+$source_page_id = $source_page->ID;
+$source_page_bg_img = get_field('background_image', $source_page_id);
+
+// get background image for Custom Tax Archive from the page with the matching slug
+$tax_post_type = get_taxonomy( $archive_object->taxonomy )->object_type[0];
+$tax_cpt_object = get_queried_object($tax_post_type);
+
+
+var_dump($tax_cpt_object);
+
+
 ?>
 
 <div class="page-banner">
-	<div class="bg" style="background-image: url(<?php the_field('background_image');?>);"></div>
+	<?php if (is_archive()):?>
+		<div class="bg" style="background-image: url(<?php echo $source_page_bg_img;?>);"></div>
+	<?php else:?>
+		<div class="bg" style="background-image: url(<?php the_field('background_image');?>);"></div>
+	<?php endif;?>
+	
 	<div class="mask"></div>
 	
 	<div class="grid-container">
@@ -84,7 +106,6 @@ $current_url = home_url( add_query_arg( array(), $wp->request ) );
 						</ul>
 					</nav>	
 				</div>									
-				
 			<?php endif;?>
 
 		</div>

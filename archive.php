@@ -18,15 +18,53 @@ $post_type_object = get_post_type_object($post_type);
 		    <main class="main" role="main">
 			    <div class="grid-container">
 				    
+				    <?php if( get_post_type(get_the_ID()) == 'team_member'):?>
+				    
+					    <div class="post-filter filter-buttons tax-buttons grid-x grid-padding-x">
+						    
+					    	<?php
+								$args = array(
+									'taxonomy' => 'team_member_type',
+									'hide_empty' => true
+								);
+								$terms = get_terms($args);
+								$default_term_slug = 'all'; // featured
+							?>
+							
+							<?php foreach ($terms as $term): ?>
+							<div class="cell shrink">
+								
+								<button class="button small filter-btn" id="filter-<?php echo $term->slug; ?>" data-tax="type" data-term="<?php echo $term->slug; ?>" <?php echo ($term->slug == $default_term_slug ? 'selected="selected"' : ''); ?>>
+									<span class="cat"><?php echo $term->name; ?></span>								
+								</button>
+								
+							</div>
+							<?php endforeach; ?>
+						    
+					    </div>
+				    
+				    <?php endif;?>
+				    
+				    <?php if( get_post_type(get_the_ID()) != 'team_member'):?>
+				    
 				    <div class="header grid-x grid-margin-x">
 					    <div class="cell">
-						    <h3>
-							    <span><?php echo $archive_object->name;?></span>
+						    <h2>
+							    <?php if ( is_archive('news_post') && !is_tax() ):?>
+								    <span>Greenspring</span>
+								    
+								<?php elseif ( is_tax() ):?>
+								    <span><?php echo $archive_object->name;?></span>
+							    <?php else:?>
+							    	<span><?php echo $archive_object->name;?></span>
+							    <?php endif;?>
 							    <span><?php echo $post_type_object->label;?></span>
-						    </h3>
+						    </h2>
 					    </div>
 					    <div class=" cell divider"></div>
 				    </div>
+				    
+				    <?php endif;?>
 			    	
 					<div class="card-grid grid-x grid-padding-x" data-equalizer data-equalize-on="medium">
 			
