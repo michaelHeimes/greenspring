@@ -43,6 +43,12 @@
 		get_template_part('modules/logo_grid');
 	
 	endif;?>
+
+	<?php if ( get_row_layout() == 'overflow_slider' ) : 
+	
+		get_template_part('modules/overflow_slider');
+	
+	endif;?>
 	
 	<?php if ( get_row_layout() == 'side-by-side_images' ) : 
 	

@@ -1,4 +1,4 @@
-<section class="slider module color-<?php the_sub_field('color_theme');?>">
+<section class="slider split-slider module color-<?php the_sub_field('color_theme');?>">
 	<div class="grid-container">
 		<div class="grid-x grid-padding-x">
 		

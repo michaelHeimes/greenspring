@@ -1,28 +1,8 @@
-<?php
-// get object for archives
-$archive_object = get_queried_object();
-
-// get background image for CPT Archive from the page with the matching slug
-$cpt_slug = $archive_object->name;
-$post_type_object = get_post_type_object($cpt_slug);
-$rewrite_slug  = $post_type_object->rewrite['slug'];
-$source_page = get_page_by_path($rewrite_slug);
-$source_page_id = $source_page->ID;
-$source_page_bg_img = get_field('background_image', $source_page_id);
-
-// get background image for Custom Tax Archive from the page with the matching slug
-$tax_post_type = get_taxonomy( $archive_object->taxonomy )->object_type[0];
-$tax_cpt_object = get_queried_object($tax_post_type);
-
-
-var_dump($tax_cpt_object);
-
-
-?>
-
 <div class="page-banner">
-	<?php if (is_archive()):?>
-		<div class="bg" style="background-image: url(<?php echo $source_page_bg_img;?>);"></div>
+	<?php if (is_archive('news_post')):?>
+		<div class="bg" style="background-image: url(<?php the_field('news_archive_banner_image', 'option');?>);"></div>
+	<?php elseif (is_archive('news_post')):?>
+		<div class="bg" style="background-image: url(<?php the_field('team_archive_banner_image', 'option');?>);"></div>
 	<?php else:?>
 		<div class="bg" style="background-image: url(<?php the_field('background_image');?>);"></div>
 	<?php endif;?>
@@ -64,9 +44,6 @@ var_dump($tax_cpt_object);
 							    'hide_empty' => false,
 							    'parent' => $term_ID,
 							) );
-														
-							
-
 						?>
 						
 							<li class="jump-link-wrap <?php echo $term_slug;?>">
@@ -92,6 +69,21 @@ var_dump($tax_cpt_object);
 				</div>
 
 								
+			<?php endif;?>
+			
+			<?php if ( is_page() && $post->post_parent ):
+				global $post;
+			?>
+				<div class="cell">
+					<nav aria-label="You are here:" role="navigation">
+						<ul class="breadcrumbs">
+							<li><a href="<?php echo get_permalink( $post->post_parent ); ?>"><?php echo get_the_title( $post->post_parent ); ?></a></li>
+							<li class="underlined">
+								<?php the_title();?>
+							</li>
+						</ul>
+					</nav>	
+				</div>				
 			<?php endif;?>
 				
 			<?php if( is_singular('team_member') ):?>

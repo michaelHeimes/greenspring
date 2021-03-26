@@ -1,4 +1,4 @@
-.slider.module {
+.split-slider.module {
 	
 	>.grid-container {
 		position: relative;
@@ -35,16 +35,7 @@
 			}
 			
 			.slider-nav {
-				position: relative;
 				padding-top: 1.9em;
-				width: 100%;
-				display: flex;
-				justify-content: flex-end;
-				
-				button:last-child {
-					margin-left: 1.1em;
-				}
-				
 			}
 			
 		}

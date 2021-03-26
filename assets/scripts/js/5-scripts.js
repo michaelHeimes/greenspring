@@ -17,10 +17,10 @@
 		$('header.header').removeClass('off-canvas-content is-open-right has-transition-push');
 	});	
 	
-	//Slider Module
-	if ( $('.slider').length ) {
+	// Slider Module
+	if ( $('.split-slider').length ) {
 		
-		$('.slider.module').each(function( e,i ) {
+		$('.split-slider.module').each(function( e,i ) {
 			
 			var splitSliderImg = {
 				slidesToShow: 1,
@@ -73,6 +73,37 @@
 		
 		});
 		
+	};
+	
+	// Overflow Slider Module
+	if ( $('.overflow-slider-slider').length ) {
+	
+		$('.overflow-slider-slider').each(function( e,i ) {
+			
+			var $this = $(this);
+			var $buttonPrev = $($this).parent().siblings('.left').find('.os-slide-prev');
+			var $buttonNext = $($this).parent().siblings('.left').find('.os-slide-next');
+			
+			console.log($buttonPrev);
+			
+			$($this).slick({
+				infinite: true,
+				slidesToShow: 1,
+				slidesToScroll: 1,
+				dots: false,
+				arrows: false,
+			});
+			
+			$buttonPrev.click(function(e){
+				$this.slick('slickPrev');
+			});
+
+			$buttonNext.click(function(e){
+				$this.slick('slickNext');
+			});
+		
+		});
+	
 	};
 	
 	//Dual Insight Sliders

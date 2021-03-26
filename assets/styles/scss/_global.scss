@@ -144,16 +144,20 @@ button,
 	}
 }
 
-.private-wealth-management {
-
-}
-
-.corporate-retirement {
-
-}
-
-.endowment-foundation {
-
+.slider {
+	
+	.slider-nav {
+		position: relative;
+		width: 100%;
+		display: flex;
+		justify-content: flex-end;
+		
+		button:last-child {
+			margin-left: 1.1em;
+		}
+		
+	}
+	
 }
 
 .social-links {
@@ -306,6 +310,46 @@ a.rm-link {
 			
 	}
 	
+}
+
+blockquote {
+	background-color: $dark-gray;
+    color: #fff;
+    padding-top: 6.45em;
+    padding-bottom: 4.3em;
+    
+    p {
+	    position: relative;
+	    text-align: center;
+	    font-family: $font-heading;
+	    font-size: rem-calc(28);
+	    color: $white;
+	    padding-right: 1.25rem;
+		padding-left: 1.25rem;
+		
+	&:before {
+		content: '“';
+		font-family: $font-body;
+		font-size: rem-calc(51);
+		font-weight: bold;
+		position: absolute;
+		top: -72px;
+		left: 50%;
+		transform: translateX(-50%);
+		color: $white;
+	}
+	    
+	    @include breakpoint(medium) {
+		    font-size: rem-calc(33);
+	    }
+	    
+	    @include breakpoint(tablet) {
+		    width: 83.33333%;
+		    margin-left: 8.33333%;
+	    }
+	    
+    }
+    
 }
 
 button,

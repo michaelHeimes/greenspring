@@ -2,13 +2,17 @@
 	<div class="grid-container">
 		<div class="grid-x grid-padding-x">
 			
+			<?php $cols = get_sub_field('columns');?>
+			
 			<?php if( have_rows('cards') ):?>
 				<?php while ( have_rows('cards') ) : the_row();?>
 				
 				<?php if( have_rows('single_card') ):?>
 					<?php while ( have_rows('single_card') ) : the_row();?>	
 					
-					<div class="single-card cell small-12 medium-6">
+
+					
+					<div class="single-card cell small-12 <?php if ( $cols == 'two'):?> medium-6<?php endif;?><?php if ( $cols == 'three'):?> medium-6 tablet-4<?php endif;?>">
 						<div class="inner">
 							<div class="grid-x grid-padding-x">
 								<div class="cell small-12 medium-shrink">
