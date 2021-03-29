@@ -108,73 +108,86 @@
 	
 	//Dual Insight Sliders
 	if ( $('.di-slider').length ) {
-		
-		$('.dual-insights-sliders').imagesLoaded( function() {
+				
 			
-			$(window).on("load resize", function() {	
+		$(window).on("load resize", function() {	
+			
+			
+			
+			
+/*
+				// Get an array of all element heights
+				var elementHeights = $('.di-card .inner').map(function() {
+					return $(this).height();
+				}).get();
 				
-				var cardHeight = -1;
+				// Math.max takes a variable number of arguments
+				// `apply` is equivalent to passing each height as an argument
+				var maxHeight = Math.max.apply(null, elementHeights);
 				
-				$('.di-card .inner').each(function() {
-					cardHeight =  cardHeight > $(this).height() ?  cardHeight : $(this).height();
-				});
-				
-				$('.di-card .inner').each(function() {
-					$(this).css('min-height',  cardHeight);
-				});    
+				// Set each height to the max height
+				$('.di-card .inner').height(maxHeight);
+*/
+			
+			var cardHeight = -1;
+			
+			$('.di-card .inner').each(function() {
+				cardHeight =  cardHeight > $(this).height() ?  cardHeight : $(this).height();
+			});
+			
+			$('.di-card .inner').each(function() {
+				$(this).css('min-height',  cardHeight);
+			});    
 
+			
+			var maxHeight = -1;
+			$('.di-slider .slick-slide').each(function() {
+				if ($(this).height() > maxHeight) {
+				    maxHeight = $(this).height();
+				}
+			});
+			
+			$('.di-slider .slick-slide').each(function() {
 				
-				var maxHeight = -1;
-				$('.di-slider .slick-slide').each(function() {
-					if ($(this).height() > maxHeight) {
-					    maxHeight = $(this).height();
-					}
-				});
-				
-				$('.di-slider .slick-slide').each(function() {
+				if ( $(this).find('.di-card .inner').length == 2) {
 					
-					if ( $(this).find('.di-card .inner').length == 2) {
-						
-					    if ($(this).height() < maxHeight) {
-					    	$(this).css('margin', Math.ceil((maxHeight-$(this).height())/2) + 'px 0');
-						}
-										
-					} else {
-						
-						if ($(this).height() < maxHeight) {
-							$(this).css('margin-top', '1px');
-							$(this).css('margin-bottom', Math.ceil((maxHeight-$(this).height())));
-						}
-					}				  
-				});
-
+				    if ($(this).height() < maxHeight) {
+				    	$(this).css('margin', Math.ceil((maxHeight-$(this).height())/2) + 'px 0');
+					}
+									
+				} else {
+					
+					if ($(this).height() < maxHeight) {
+						$(this).css('margin-top', '1px');
+						$(this).css('margin-bottom', Math.ceil((maxHeight-$(this).height())));
+					}
+				}				  
 			});
 
-		
-			$('.di-slider').each(function( e,i ) {
-				
-				var $slider = $(this);
-				
-				var $buttonPrev = $($slider).next('.bottom').find('.button-prev');
-				var $buttonNext = $($slider).next('.bottom').find('.button-next');
-										
-				$($slider).slick({
-					slidesToShow: 1,
-					slidesToScroll: 1,
-					arrows: true,
-					dots: false,
-					vertical: true,
-					infinite: true,
-					rows: 0,
-					verticalSwiping: true,
-					prevArrow: $($buttonPrev),
-					nextArrow: $($buttonNext),
-				});		
+		});
 
-				
-			});
+	
+		$('.di-slider').each(function( e,i ) {
+			
+			var $slider = $(this);
+			
+			var $buttonPrev = $($slider).next('.bottom').find('.button-prev');
+			var $buttonNext = $($slider).next('.bottom').find('.button-next');
+									
+			$($slider).slick({
+				slidesToShow: 1,
+				slidesToScroll: 1,
+				arrows: true,
+				dots: false,
+				vertical: true,
+				infinite: true,
+				rows: 0,
+				verticalSwiping: true,
+				prevArrow: $($buttonPrev),
+				nextArrow: $($buttonNext),
+			});		
 
-		
+			
 		});
 		
 	};
@@ -200,76 +213,6 @@
 	
 	// Team Filter
 	if ($('body').hasClass('post-type-archive-team_member')) {
-		
-/*
-		//Hide all filter buttons except for Status: Active
-		$('.buttons-group').not('#status-dropdown').slideUp(0).css('opacity', '0');
-		
-		//Make filter show BOTH Active and Realized as default with Status Filter open
-		$('.filter-group.status .show-filter').attr('data-click-state', '1');
-		$('.filter-group.status .show-filter').addClass('open');
-		$('.grid-filter button#filter-active').addClass('active');
-		$('.company-cards-wrap > .single-company-card:not([data-status=".active."])').hide();
-		
-*/
-		//Filter Animations
-/*
-		$('.filter-group').on('click', 'button.show-filter', function() {
-			   
-			var $filterShow = $(this);
-							
-			var $gridFilter = $(this).parents('.filter-group').find('.buttons-group');
-											
-			if($(this).attr('data-click-state') == 1) {
-				$(this).attr('data-click-state', 0);
-				$($gridFilter).animate({ opacity: 0 }, 250);
-				$(this).removeClass('open');
-				$($gridFilter).slideUp(300);
-		      }
-		    else {
-			    $(this).addClass('open');
-			    $(this).attr('data-click-state', 1);
-				$($gridFilter).slideDown(300);
-				$($gridFilter).animate({ opacity: 1 }, 250);
-		    }
-		});		
-*/	
-
-		/**
-		*Logo Card Heights
-		*/
-
-/*
-		var setHeight = function() {
-
-			var $card = $('.company-cards-wrap .single-company-card');				
-			var $cardWidth = $($card).width();
-							
-			$($card).css('min-height', $cardWidth);
-			
-		};
-			
-		$('.canvas-wrapper').imagesLoaded( function() {
-			setHeight();
-		});
-		
-		$(window).resize(function() {
-			setHeight();
-		});
-*/
-		
-		
-		/**
-		 * JS Filtering
-		 * filter porfolio items
-		 * @param  {jQuery Object} query_type
-		 * @param  {jQuery Object} query_industry
-		 * @param  {jQuery Object} query_status
-		 * @param  {jQuery Object} query_catslyst
-		 * @param  {jQuery Object} query_ownership
-		 * @return nothing
-		 */
-		 
 		 
 		var $filter_team = function(query_type) {
 			if (query_type == 'all') query_type = '';
@@ -327,24 +270,6 @@
 			}
 		}
 
-		// remove all filters			
-/*
-		$(document).on('click', 'button.clear-filters', function(event) {
-			event.preventDefault();
-			
-			$(this).fadeOut(0);
-
-			$('.filter-group-wrap .grid-filter button.filter-btn').removeClass('active');
-
-			var query_type = $('.filter-group-wrap .grid-filter button.active[data-tax="type"]');
-			
-			if ($('.company-cards-wrap').length > 0) {
-				$filter_team(query_type, query_industry, query_status, query_catalyst, query_ownership);
-			}			
-
-		});
-*/
-
 		// filter the grid on nav click
 		$(document).on('click', '.filter-buttons button.filter-btn', function(event) {
 			
@@ -370,19 +295,6 @@
 			}	
 
 		});
-		
-
-		// event after grid is filtered
-/*
-		$(window).on('grid-update', function(event) {
-			$(document).trigger('blazy-revalidate');
-
-			$('.filter-group-wrap .grid-filter button.filter-btn').not(this).prop('disabled', false);
-
-			$(window).trigger('equal-watch');
-		});
-*/
-
 
 	}
 

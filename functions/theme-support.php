@@ -8,6 +8,13 @@ function joints_theme_support() {
 	
 	// Default thumbnail size
 	set_post_thumbnail_size(125, 125, true);
+	
+	// Add image size for post cards
+	add_image_size( 'post-card', 600, 400, true );
+
+	// Add image size for team members
+	add_image_size( 'team-post', 170, 170, true );
+
 
 	// Add RSS Support
 	add_theme_support( 'automatic-feed-links' );

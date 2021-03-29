@@ -2,7 +2,7 @@
 	
 	.color-bg {
 		padding-top: 4.8em;
-		padding-bottom: 4.65em;
+		padding-bottom: 2.65em;
 	
 		.header {
 			padding-bottom: 2.05em;
@@ -27,6 +27,7 @@
 		.col-wrap {
 			.cell {
 				border-left: 1px solid $dark-gray;
+				margin-bottom: 2em;
 				
 				.inner {
 					padding: 1em 2.45em;

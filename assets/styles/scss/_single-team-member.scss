@@ -1,61 +1,71 @@
 .single.single-team_member {
 	
-	.left {
-		
-		@include breakpoint(xlarge) {
-			padding-right: 3rem;
-		}
-		
-		header.article-header {
-			padding-bottom: 3.1em;
-			
-			h1 {
-				font-size: rem-calc(40);
-				line-height: 1.05;
-				margin-bottom: .28em;
-			}
-			
-			.job-title {
-				font-size: rem-calc(20);
-				line-height: 1.1;
-			}
-		}
-	}
+	article.team_member {
 	
-	.right {
-		.inner {
-			padding-top: 1.8em;
-			border-left: 2px solid $medium-gray;
+		.left {
 			
-			.row {
-				display: flex;
-				align-items: flex-start;
-				padding-bottom: 2.5em;
+			@include breakpoint(xlarge) {
+				padding-right: 3rem;
+			}
+			
+			header.article-header {
+				padding-bottom: 3.1em;
 				
-				.pipe {
-					height: 2px;
-					background-color: $medium-gray;
-					width: 31px;
-					margin-right: 9px;
-				}
-				
-				.content-wrap {
-					margin-top: -8px;
-					font-size: rem-calc(12);
+				h1 {
+					font-size: rem-calc(40);
+					line-height: 1.05;
+					margin-top: 1.5rem;
+					margin-bottom: .28em;
 					
-					.content-label {
-						font-weight: bold;
-						text-transform: uppercase;
-						letter-spacing: 2px;
-						padding-bottom: .75em;
+					@include breakpoint(medium) {
+						margin-top: 0;
 					}
 					
-					.content {
-						color: $black;
-						line-height: 2;
+				}
+				
+				.job-title {
+					font-size: rem-calc(20);
+					line-height: 1.1;
+				}
+			}
+		}
+		
+		.right {
+			.inner {
+				padding-top: 1.8em;
+				border-left: 2px solid $medium-gray;
+				
+				.row {
+					display: flex;
+					align-items: flex-start;
+					padding-bottom: 2.5em;
+					
+					.pipe {
+						height: 2px;
+						background-color: $medium-gray;
+						width: 31px;
+						margin-right: 9px;
+					}
+					
+					.content-wrap {
+						margin-top: -8px;
+						font-size: rem-calc(12);
 						
-						a {
+						.content-label {
+							font-weight: bold;
+							text-transform: uppercase;
+							letter-spacing: 2px;
+							padding-bottom: .75em;
+						}
+						
+						.content {
 							color: $black;
+							line-height: 2;
+							
+							a {
+								color: $black;
+							}
+							
 						}
 						
 					}
@@ -63,8 +73,8 @@
 				}
 				
 			}
-			
 		}
-	}
+		
+	}	
 		
 }

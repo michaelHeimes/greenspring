@@ -88,6 +88,30 @@ footer.footer {
 		
 		}
 		
+		ul#middle-footer-links {
+			
+			li.menu-item-has-children {
+				margin-bottom: 1.7rem;
+				
+				> a {
+					font-size: rem-calc(15);
+					font-weight: 400;
+					margin-bottom: 1.05em;
+				}
+				
+				ul.sub-menu {
+					columns: 2;
+					
+					li a {
+						font-size: rem-calc(12);
+					}
+					
+				}
+				
+			}
+			
+		}
+		
 		ul#right-footer-links {
 			li.menu-item-has-children {
 				

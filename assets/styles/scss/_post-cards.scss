@@ -3,14 +3,27 @@
 }
 
 .post-card {
-	margin-bottom: 2.5rem;
+	
+	&:not(.horizontal) {
+		margin-bottom: 2.5rem;
+		
+/*
+		.post-card-shadow {
+			max-width: 351px;
+		    display: inline-flex;
+		    flex-direction: column;
+		    text-align: left;
+		}
+*/
+		
+	}
 	
 	a {
 		color: $black;
 	}
 	
 	.tax-icons {
-		margin-top: -12px;
+		margin-top: -24px;
 	    position: relative;
 	    display: flex;
 	    flex-direction: row;

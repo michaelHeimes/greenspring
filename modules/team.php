@@ -18,7 +18,7 @@
 			
 			<div class="divider"></div>
 			
-			<div class="card-grid grid-x grid-padding-x small-up-1 medium-up-3 tablet-up-3" data-equalizer data-equalize-on="medium">
+			<div class="card-grid grid-x grid-padding-x small-up-2 medium-up-3 tablet-up-3" data-equalizer data-equalize-on="medium">
 	
 				<?php 
 				$args = array(  

@@ -2,14 +2,18 @@
 	<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>">
 	    <div class="inner grid-x grid-padding-x">
 	        
-			<div class="img-wrap cell shrink">
+			<div class="img-wrap cell small-12 tablet-shrink">
+
 				<?php 
 				$image = get_field('photo');
+				$image_size = 'team-post';
+		        $image_url = $image['sizes'][$image_size];
 				if( !empty( $image ) ): ?>
 				<div>
-				    <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+		        	<img src="<?php echo $image_url; ?>" width="<?php echo $image['sizes']['team-post']; ?>" height="<?php echo $image['sizes']['team-post']; ?>" alt="<?php echo $image['caption']; ?>" />
 				</div>
-				<?php endif; ?>
+				<?php endif; ?>		
+				
 			</div>
 			
 			<div class="cell auto">

@@ -17,9 +17,19 @@
 		
 	}
 	
-	.gform_wrapper.gf_browser_chrome ul.gform_fields li.gfield span.name_first, .gform_wrapper.gf_browser_chrome ul.gform_fields li.gfield span.name_last, .gform_wrapper.gf_browser_chrome ul.gform_fields li.gfield span.name_middle {
+	.gform_wrapper.gf_browser_chrome ul.gform_fields li.gfield span.name_first,
+	.gform_wrapper.gf_browser_chrome ul.gform_fields li.gfield span.name_last,
+	.gform_wrapper.gf_browser_chrome ul.gform_fields li.gfield span.name_middle {
 		font-size: rem-calc(17);
-		padding: 0 40px;
+		padding: 0 0px 0 40px;
+		
+		@include breakpoint(tablet) {
+			padding: 0 40px;
+		}
+	}
+	
+	.gform_wrapper.gf_browser_chrome ul.gform_fields li.gfield span.name_first {
+		margin-bottom: 1.5rem;
 	}
 	
 	.top_label div.ginput_complex.ginput_container.gf_name_has_1, .top_label div.ginput_complex.ginput_container.gf_name_has_2, .top_label div.ginput_complex.ginput_container.gf_name_has_3 {
@@ -27,6 +37,16 @@
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: space-between;
+		
+		span {
+			width: 100%;
+			
+			@include breakpoint(tablet) {
+				width: 50%;
+			}
+			
+		}
+		
 	}
 	
 	div.ginput_container_name span {
@@ -48,16 +68,29 @@
 				}
 					
 				&:nth-child(1) {
-					flex: 1 0 66.667%;
 					margin-left: -40px !important;
+					flex: 1 0 100%;
+					
+					@include breakpoint(tablet) {
+						flex: 1 0 66.667%;
+					}
+					
 				}
 				
 				&:nth-child(2) {
 					margin-right: -40px;
-					flex: 1 0 33.333%;
+					flex: 1 0 100%;
+					
+					@include breakpoint(tablet) {
+						flex: 1 0 33.333%;
+					}
 					
 					.ginput_container {
-						padding: 0 40px;
+						padding: 0 40px 0 0;
+						
+						@include breakpoint(tablet) {
+							padding: 0 40px;
+						}
 					}
 					
 				}
@@ -70,6 +103,11 @@
 				
 			}
 					
+			ul.gfield_checkbox li label {
+				@include breakpoint(tablet) {
+					white-space: nowrap;
+				}
+			}
 			
 		}
 		

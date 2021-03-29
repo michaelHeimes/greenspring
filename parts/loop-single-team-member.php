@@ -13,12 +13,16 @@
 							
 				<header class="article-header">		
 					<div class="grid-x grid-padding-x align-middle">
-						<div class="cell shrink">
+						<div class="cell small-12 medium-shrink">
+							
 							<?php 
 							$image = get_field('photo');
+							$image_size = 'team-post';
+					        $image_url = $image['sizes'][$image_size];
 							if( !empty( $image ) ): ?>
-							    <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
-							<?php endif; ?>
+					        	<img src="<?php echo $image_url; ?>" width="<?php echo $image['sizes']['team-post']; ?>" height="<?php echo $image['sizes']['team-post']; ?>" alt="<?php echo $image['caption']; ?>" />
+							<?php endif; ?>							
+							
 						</div>
 						
 						<div class="cell auto">							

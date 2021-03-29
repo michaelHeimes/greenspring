@@ -51,7 +51,7 @@
 						        <div class="di-card"> 
 							        <?php endif; ?>
 							        
-								        <article id="post-<?php the_ID(); ?>" <?php post_class('post-card'); ?> role="article">
+								        <article id="post-<?php the_ID(); ?>" <?php post_class('post-card horizontal'); ?> role="article">
 
 									        <div class="inner post-card-shadow">
 									        
@@ -210,7 +210,7 @@
 						        <div class="di-card"> 
 							        <?php endif; ?>
 							        
-								        <article id="post-<?php the_ID(); ?>" <?php post_class('post-card'); ?> role="article">
+								        <article id="post-<?php the_ID(); ?>" <?php post_class('post-card horizontal'); ?> role="article">
 									        
 									        <div class="inner post-card-shadow">
 										        

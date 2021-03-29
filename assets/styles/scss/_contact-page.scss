@@ -28,8 +28,12 @@
 			margin: 0; 
 			
 			form {
-				padding-top: 4.1em;
+				padding-top: 2.1em;
 				min-width: 100%;
+				
+				@include breakpoint(medium) {
+					padding-top: 4.1em;
+				}
 			
 				ul.gform_fields {
 					display: flex;
@@ -74,6 +78,11 @@
 							    margin-right: 0;
 							    padding-left: 1rem !important;
 							    padding-right: 1rem !important;
+							    
+							&:nth-child(2),
+							&:nth-child(4) {
+								padding-right: 0 !important;
+							}  
 							    
 								input[type=checkbox]:checked {
 									
