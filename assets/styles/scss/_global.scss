@@ -32,7 +32,7 @@ main.main,
 }
 
 .page-banner {
-
+	background-color: $dark-gray;
 	position: relative;
 	
 	.grid-container {
@@ -55,8 +55,7 @@ main.main,
 	}
 }
 
-.bg,
-.mask {
+.bg {
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -65,11 +64,6 @@ main.main,
 	background-position: center center;
 	background-size: cover;
 	background-repeat: no-repeat;	
-}
-
-.mask {
-	background-color: #656464;
-	opacity: .8;
 }
 
 .divider {

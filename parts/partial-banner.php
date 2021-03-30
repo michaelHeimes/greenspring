@@ -6,9 +6,7 @@
 	<?php else:?>
 		<div class="bg" style="background-image: url(<?php the_field('background_image');?>);"></div>
 	<?php endif;?>
-	
-	<div class="mask"></div>
-	
+		
 	<div class="grid-container">
 		<div class="grid-x grid-padding-x align-middle">
 				
