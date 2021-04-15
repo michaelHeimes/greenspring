@@ -38,6 +38,12 @@
 	
 	endif;?>
 
+	<?php if ( get_row_layout() == 'klarity_quotient' ) : 
+	
+		get_template_part('modules/klarity_quotient');
+	
+	endif;?>
+
 	<?php if ( get_row_layout() == 'logo_grid' ) : 
 	
 		get_template_part('modules/logo_grid');

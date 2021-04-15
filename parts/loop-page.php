@@ -229,39 +229,59 @@ $parent_post_slug = $post_data->post_name;
 				    </div>
 			    </div>
 			</section>
+			
+			<?php				
+
+			if ($post->post_parent == 0) {
+
+				$args = array(
+				    'post_type'      => 'page',
+				    'posts_per_page' => -1,
+				    'post_parent'    => $post->ID,
+				    'order'          => 'ASC',
+				    'orderby'        => 'menu_order',
+				);
+				
+				} else {
+				
+				$args = array(
+				    'post_type'      => 'page',
+				    'posts_per_page' => -1,
+				    'post_parent'    => $post->ID,
+				    'order'          => 'ASC',
+				    'orderby'        => 'menu_order',
+				    'meta_query' => array(
+				        array(
+				            'key'   => 'remove_from_on-page_navigation',
+				            'value' => '1',
+				            'compare' => '!='
+				        )
+				    )
+				);
+			
+			}
+			
+			$parent = new WP_Query( $args );
+			
+			if ( $parent->have_posts() ) : ?>
 		    
 		    <section class="child-links module">
 			    <div class="grid-container">
 				    <div class="grid-x grid-margin-x">
 
-					<?php
-					
-					$args = array(
-					    'post_type'      => 'page',
-					    'posts_per_page' => -1,
-					    'post_parent'    => $post->ID,
-					    'order'          => 'ASC',
-					    'orderby'        => 'menu_order'
-					 );
-					
-					
-					$parent = new WP_Query( $args );
-					
-					if ( $parent->have_posts() ) : ?>
-					
 					    <?php while ( $parent->have_posts() ) : $parent->the_post(); ?>
 						<div class="cell shrink">
 							<a class="button small small-caps" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a>
 						</div>
 										
 					    <?php endwhile; ?>
-					
-					<?php endif; wp_reset_postdata(); ?>						
-					    
+										    
 				    </div>
 			    </div>
 		    </section>
 		    
+			<?php endif; wp_reset_postdata(); ?>						
+
 		    
 		    <?php endif;?>
 

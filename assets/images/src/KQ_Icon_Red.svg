@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="87px" height="87px" viewBox="0 0 87 87" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>KQ_Icon Red</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <polygon id="path-1" points="0 0 48 0 48 58 0 58"></polygon>
+    </defs>
+    <g id="1400---Service-D2-Results" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-797.000000, -2472.000000)">
+        <g id="KQ_Icon-Red" transform="translate(798.000000, 2473.000000)">
+            <circle id="Oval-Copy-10" stroke="#D1D1D1" fill="#FFFFFF" cx="42.5" cy="42.5" r="42.5"></circle>
+            <g id="Page-1" transform="translate(18.000000, 15.000000)">
+                <mask id="mask-2" fill="white">
+                    <use xlink:href="#path-1"></use>
+                </mask>
+                <g id="Clip-2"></g>
+                <path d="M35.4768,34.7226968 L32.0832,38.1398591 L24,30.0005363 L15.9168,38.1398591 L12.5232,34.7226968 L20.6064,26.5833741 L12.5232,18.4440513 L15.9168,15.0268891 L24,23.1662118 L32.0832,15.0268891 L35.4768,18.4440513 L27.3936,26.5833741 L35.4768,34.7226968 Z M45.6,7.25006581 L40.8,7.25006581 C33.2388,7.25006581 28.0296,2.74177999 25.5852,0.615116077 C25.1352,0.223616584 24.5748,-0.00475811946 24.0156,7.52076078e-05 C23.4576,0.00611686644 22.9008,0.244158224 22.4568,0.644116039 C20.0904,2.77319661 15.0036,7.25006581 7.2,7.25006581 L2.4,7.25006581 C1.0752,7.25006581 0,8.33273107 0,9.66672934 L0,22.0001717 C0,49.5924276 24.0012,58 24.0012,58 C24.0012,58 48,49.5924276 48,22.0001717 L48,9.66672934 C48,8.33273107 46.926,7.25006581 45.6,7.25006581 Z" id="Fill-1" fill="#E00808" mask="url(#mask-2)"></path>
+            </g>
+        </g>
+    </g>
+</svg>

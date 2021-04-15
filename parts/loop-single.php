@@ -30,7 +30,7 @@
 				</section> <!-- end article section -->
 				
 				<footer class="article-footer cell">
-					<div class="grid-x grid-padding-x align-middle">
+					<div class="grid-x grid-padding-x">
 						<div class="left cell small-12 medium-6">
 						<?php
 						$authors = get_field('author');
@@ -93,8 +93,10 @@
 									</div>
 									
 									<script async src="https://static.addtoany.com/menu/page.js"></script>
-										
+																			
 								</div>
+								
+								<div class="post-disclaimer cell shrink text-right"><?php the_field('insights_and_news_disclaimer', 'option');?></div>
 									
 							</div>
 						</div>

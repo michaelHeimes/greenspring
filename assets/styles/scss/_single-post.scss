@@ -39,7 +39,10 @@
 		
 		.left,
 		.right {
-			padding-bottom: 1.5em;
+				padding-bottom: 1.5em;
+			@include breakpoint(medium) {
+				padding-bottom: 0;
+			}
 		}
 		
 		.left {
@@ -84,6 +87,19 @@
 				
 			}
 			
+		}
+		
+		.social-links.a2a_default_style {
+			>div:last-child {
+				margin: 0;
+			}
+		}
+		
+		.post-disclaimer {
+			p {
+				margin-top: .5em;
+				margin-bottom: .5em;
+			}
 		}
 		
 	}

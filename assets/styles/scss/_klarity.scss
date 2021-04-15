@@ -1,0 +1,384 @@
+.klarity.module {
+		
+	h2 {
+		text-align: center;
+	}
+
+	h2, h5 {
+		color: $black;
+	}
+
+	h4 {
+		font-size: 24px;
+		margin: 30px 0 20px;
+	}
+
+	p {
+		color: $black;
+		text-align: center;
+	}
+	
+	.tab{
+		display: none; //// ! for tabs to work
+		line-height: 30px;
+
+		select, input{  //// ! adds uniform space in the form
+			margin-right: 5px;
+		}
+	}
+	.alert{
+		background-color: pink; //// ! validation
+	}
+
+	#form-buttons{
+		margin-top: 25px;
+	}
+
+	#final-form{ //// ! what hides the form until quiz is complete
+		visibility: hidden;
+		display: none;
+
+		.gform_confirmation_message{ //// ! Gravity forms confirmation
+			padding-top: 30px;
+			color: $medium-gray;
+			font-size: 24px;
+		}
+	}
+
+	//#form-buttons {
+	//	text-align: right;
+	//}
+
+	button {
+		text-align: center;
+		background: $white;
+		border: 1px solid $theme-green;
+		color: $black;
+		width: auto;
+		display: inline-block;
+		height: 50px;
+
+		.fa {
+			font-size: 22px;
+			position: relative;
+			top: 2px;
+			height: 20px;
+			line-height: 19px;
+
+			&.fa-angle-right {
+				margin-left: 15px;
+			}
+
+			&.fa-angle-left {
+				margin-right: 15px;
+			}
+		}
+
+		&:hover, &:active, &:focus, &:active:focus {
+			background: $white;
+			color: $theme-green;
+		}
+	}
+
+	.section-subtitle {
+		font-size: 20px;
+		text-transform: none;
+		margin-top: 20px;
+	}
+
+	.white-background {
+		background: $white;
+		padding: 50px;
+	}
+
+	.form-section {
+		font-size: 20px;
+		font-weight: 300;
+		color: $black;
+		line-height: 40px;
+	}
+
+	.status-bar {
+		background: $light-gray;
+		height: 4px;
+
+		.status-bar-fill {
+			background: $theme-green;
+			width: 0;
+			height: 100%;
+		}
+	}
+
+	.natural-language-content {
+		margin-top: 60px;
+	}
+
+	.radio-answers {
+		color: $black;
+		text-transform: uppercase;
+		font-weight: 600;
+		font-size: 0;
+		text-align: center;
+		font-size: rem-calc(14);
+	}
+	
+	.natural-language-content {
+		margin-bottom: 30px;
+	}
+	.white-background {
+		padding: 10px 20px 20px;
+	}
+	
+	input[type=radio]:not(old) + label{
+// 		width: 32%;
+		text-align: center;
+		position: relative;
+		top: -2px;
+	}
+
+	input[type=radio]:not(old) + label > .hide-text {
+		position: absolute;
+		left: -9999px;
+	}
+
+	.radio-question {
+		text-align: center;
+
+		.question {
+			text-align: left;
+		}
+	}
+
+
+	.radio-question {
+		border: 1px solid $theme-green;
+		font-size: 14px;
+		padding: 12px 0px 8px;
+		margin-bottom: 10px;
+		line-height: normal;
+	}
+
+	input[type=text] {
+		border: none;
+		border-bottom: 2px solid $theme-green;
+		font-size: 20px;
+		height: 30px;
+		vertical-align: top;
+		margin: 2px 8px 0 0;
+		padding: 5px 0 0;
+		text-align: center;
+
+		&.alert {
+			padding: 0;
+			padding: 5px 0 0;
+		}
+	}
+
+	.gform_wrapper {
+		ul.gform_fields li.gfield {
+			padding-right: 0 !important;
+		}
+		.gform_fields.top_label .gfield_label {
+			display: none;
+		}
+		.gform_footer {
+			padding: 0;
+			input.button {
+				display: block;
+				margin: auto;
+				width: 300px;
+				margin: auto;
+			}
+		}
+	}
+
+	.ginput_container_email {
+		input[type=text] {
+			border: 1px solid $theme-green;
+			text-transform: uppercase;
+			font-size: 12px !important;
+			text-align: left;
+			max-width: 300px;
+			margin: auto;
+			padding: 14px 15px 9px !important;
+			height: auto;
+		}
+	}
+
+	input[type=radio]:not(old){
+		margin    : 0;
+		padding   : 0;
+		font-size : 1em;
+		opacity   : 0;
+		position: absolute;
+		left: -9999px;
+	}
+
+	input[type=radio]:not(old) + label{
+		display      : inline-block;
+		line-height  : 1.5em;
+		margin: 0;
+		font-weight: 300;
+	}
+
+	input[type=radio]:not(old) + label > .radio-custom{
+		display          : inline-block;
+		width            : 16px;
+		height           : 16px;
+		margin           : 0;
+		border           : 1px solid $medium-gray;
+		background       : $white;
+		vertical-align   : bottom;
+	}
+
+	input[type=radio]:not(old):checked + label > .radio-custom{
+		background       : $white;
+	}
+
+	input[type=radio]:not(old):checked + label > .radio-custom > span{
+		display          : block;
+		width            : 6px;
+		height           : 6px;
+		margin           : 4px;
+		background       : $theme-green;
+	}
+
+	.select-wrapper {
+		display: inline-block;
+		position: relative;
+		margin: 0;
+		margin-right: 8px;
+		height: 30px;
+		font-size: 20px;
+
+		input[type=text] {
+			margin: 2px 0 0;
+			padding-right: 18px;
+			width: 270px;
+
+			&.alert {
+				padding-right: 18px;
+			}
+		}
+
+		.fa {
+			display: block;
+			cursor: pointer;
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			text-align: right;
+			font-size: 20px;
+			line-height: 30px;
+		}
+	}
+
+	.select-list {
+		max-height: 0;
+		overflow: hidden;
+		position: absolute;
+		top: 100%;
+		left: 0;
+		min-width: 100%;
+		background: $theme-green;
+		z-index: 10;
+		margin: 0;
+		padding: 0;
+		font-size: 20px;
+		line-height: 24px;
+
+		&.active {
+			max-height: 400px;
+			overflow: auto;
+			padding: 5px 0;
+		}
+
+		li {
+			cursor: pointer;
+			padding: 5px 10px;
+			margin: 0;
+
+			&:before {
+				display: none;
+			}
+
+			&:hover {
+				background: $light-gray;
+			}
+		}
+	}
+
+	#final-form {
+		li.gfield.gfield_html {
+			margin: 0 -15px !important;
+			padding: 0 !important;
+			max-width: none;
+		}
+	}
+
+	.klarity-results-section {
+		color: $black;
+		font-size: 14px;
+
+		margin-bottom: 30px;
+		text-align: center;
+
+		h6 {
+			font-size: 16px;
+		}
+
+		.status-icon {
+			display: block;
+			margin: auto;
+			height: 86px;
+			width: 86px;
+			margin-bottom: 15px;
+			background-size: cover;
+			background-image: url(../images/KQ_Icon_Red.svg);
+
+			&.yellow-icon {
+				background-image: url(../images/KQ_Icon_Yellow.svg);
+			}
+
+			&.green-icon {
+				background-image: url(../images/KQ_Icon_Green.svg);
+			}
+		}
+
+		.section-count {
+			color: $theme-green;
+			font-size: 18px;
+			text-align: left;
+		}
+
+		.klarity-results-inner {
+			padding: 15px;
+		}
+	}
+
+	.gform_body {
+		h4 {
+			text-align: center;
+			font-size: 18px;
+		}
+	}
+	
+	
+	@include breakpoint(medium) {
+		#form-modal {
+			.form-card {
+				padding: 15px 30px;
+			}
+		}
+	}	
+	
+	
+	@media only screen and (max-width: 641px)  {
+		.gform_wrapper div.ginput_container_name span {
+			padding-right: 0 !important;
+		}
+	}
+	
+}
