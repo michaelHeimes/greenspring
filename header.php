@@ -36,8 +36,28 @@
 		<?php wp_head(); ?>
 
 	</head>
+	
+	<?php
+		
+		if ( is_page() && $post->post_parent ) {
 			
-	<body <?php body_class(); ?>>
+			$post_data = get_post($post->post_parent);
+			
+			if($post_theme = get_field('color_theme', $post_data)) {
+				$theme_color = 'theme-color-'. $post_theme;
+			}	
+			
+		} else {
+		
+			if($post_theme = get_field('color_theme')) {
+				$theme_color = 'theme-color-'. $post_theme;
+			}	
+		
+		}
+	?>
+
+			
+	<body <?php body_class($theme_color); ?>>
 
 		<header class="header banner-style-<?php the_field('banner_style');?>" role="banner" data-sticky data-margin-top="0" data-sticky-on="small">
 

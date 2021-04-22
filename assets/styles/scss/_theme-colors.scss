@@ -1,4 +1,5 @@
 .jump-links,
+.theme-color-green article.page,
 .insight_type-private-wealth-management,
 .private-wealth,
 .private-wealth-management {
@@ -62,14 +63,7 @@
 	}
 		
 }
-
-body.page-child .private-wealth {
-	.child-links a.button:not(.current-tax) {
-		color: $black;
-		background-color: rgba( $theme-green, .3 );
-	}
-}
-
+	
 .two-cta-boxes.color-green {
 	.inner {
 		background-color: rgba( $theme-green, .3 );	
@@ -77,6 +71,14 @@ body.page-child .private-wealth {
 			color: $theme-green;
 		}		
 	}		
+}
+	
+
+body.page-child.theme-color-green {
+	.child-links a.button:not(.current-tax) {
+		color: $black;
+		background-color: rgba( $theme-green, .3 );
+	}
 }
 
 .slider.module.color-green {
@@ -121,10 +123,9 @@ body.page-child .private-wealth {
 	background-color: #F2F9ED;	
 }
 
-
-
-
+	
 .jump-links,
+.theme-color-navy article.page,
 .insight_type-corporate-retirement,
 .corporate-retirement {
 	.two-cta-boxes {
@@ -190,14 +191,7 @@ body.page-child .private-wealth {
 	}
 	
 }
-
-body.page-child .corporate-retirement {
-	.child-links a.button:not(.current-tax) {
-		color: $black;
-		background-color: rgba( $theme-blue, .3 );
-	}
-}
-
+	
 .two-cta-boxes.color-blue {
 	.inner {
 		background-color: rgba( $theme-blue, .3 );	
@@ -205,6 +199,14 @@ body.page-child .corporate-retirement {
 			color: $theme-blue;
 		}		
 	}		
+}
+	
+
+body.page-child.theme-color-navy {
+	.child-links a.button:not(.current-tax) {
+		color: $black;
+		background-color: rgba( $theme-blue, .3 );
+	}
 }
 
 .slider.module.color-blue {
@@ -248,9 +250,9 @@ body.page-child .corporate-retirement {
 .team-module.corporate-retirement .color-bg {
 	background-color: rgba( #44749D, .20 );
 }
-
-
+	
 .jump-links,
+.theme-color-blue article.page,
 .insight_type-endowment-foundation,
 .endowments-foundations,
 .endowment-foundation {
@@ -313,14 +315,7 @@ body.page-child .corporate-retirement {
 	}	
 
 }
-
-body.page-child .endowments-foundations {
-	.child-links a.button:not(.current-tax) {
-		color: $black;
-		background-color: rgba( $theme-purple, .3 );
-	}
-}
-
+	
 .two-cta-boxes.color-purple {
 	.inner {
 		background-color: rgba( $theme-purple, .3 );	
@@ -328,6 +323,14 @@ body.page-child .endowments-foundations {
 			color: $theme-purple;
 		}		
 	}		
+}
+
+
+body.page-child.theme-color-blue {
+	.child-links a.button:not(.current-tax) {
+		color: $black;
+		background-color: rgba( $theme-purple, .3 );
+	}
 }
 
 .slider.module.color-purple {
