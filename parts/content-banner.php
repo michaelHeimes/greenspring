@@ -1,7 +1,7 @@
 <div class="page-banner">
-	<?php if (is_archive('news_post')):?>
+	<?php if (is_post_type_archive('news_post')):?>
 		<div class="bg" style="background-image: url(<?php the_field('news_archive_banner_image', 'option');?>);"></div>
-	<?php elseif (is_archive('news_post')):?>
+	<?php elseif (is_post_type_archive('team_member')):?>
 		<div class="bg" style="background-image: url(<?php the_field('team_archive_banner_image', 'option');?>);"></div>
 	<?php else:?>
 		<div class="bg" style="background-image: url(<?php the_field('background_image');?>);"></div>
@@ -14,10 +14,26 @@
 				$post_type = get_post_type();
 				$post_type_object = get_post_type_object($post_type);
 				?>
-				<div class="cell">
-					<h1><?php echo $post_type_object->label ?></h1>
-				</div>
 				
+				<?php if (is_post_type_archive('team_member')):?>
+								
+					<?php if( $alternative_title = get_field('team_archive_heading', 'option') ):?>
+						<h1><?php echo $alternative_title;?></h1>
+					<?php else:?>
+						<h1><?php echo $post_type_object->label ?></h1>
+					<?php endif;?>
+				
+					
+				<?php elseif (is_post_type_archive('news_post')):?>
+				
+					<?php if( $alternative_title = get_field('news_archive_heading', 'option') ):?>
+						<h1><?php echo $alternative_title;?></h1>
+					<?php else:?>
+						<h1><?php echo $post_type_object->label ?></h1>
+					<?php endif;?>
+					
+				<?php endif;?>
+								
 				
 			<?php elseif ( is_page_template('page-templates/page-insights.php') ):?>
 			
@@ -58,12 +74,12 @@
 			
 				<div class="cell">
 
-				<?php if( $alternative_title = get_field('alternative_title') ):?>
-					<h1><?php echo $alternative_title;?></h1>
-				<?php else:?>
-					<h1><?php the_title();?></h1>
-				<?php endif;?>
-			
+					<?php if( $alternative_title = get_field('alternative_title') ):?>
+						<h1><?php echo $alternative_title;?></h1>
+					<?php else:?>
+						<h1><?php the_title();?></h1>
+					<?php endif;?>
+
 				</div>
 
 								

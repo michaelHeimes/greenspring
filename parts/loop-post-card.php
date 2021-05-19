@@ -13,10 +13,8 @@ if( get_post_type(get_the_ID()) == 'team_member'){
 	
     <div class="inner post-card-shadow">
 
-	<?php if( get_post_type(get_the_ID()) == 'team_member'):?>
-	<a href="<?php echo the_permalink();?>">
-	<?php endif;?>
-        
+		<a class="permalink" href="<?php echo the_permalink();?>"></a>
+	        
         <div class="top">
 	        
 	        <?php if( get_post_type(get_the_ID()) == 'team_member'):?>
@@ -52,12 +50,12 @@ if( get_post_type(get_the_ID()) == 'team_member'){
 				    <?php $insight_terms = get_the_terms( $post->ID , 'insight_type' );
 				        foreach ($insight_terms as $term): 
 						if ( $term->parent != 0 ):
+						$link = get_term_link($term);
 						$icon = get_field('icon', $term);									    
 		        	?>		
-		        
-		        	<div class="icon">
+		        	<a href="<?php echo $link;?>" class="icon">
 			        	<img src="<?php echo esc_url($icon['url']); ?>" alt="<?php echo esc_attr($icon['alt']); ?>" />
-		        	</div>
+		        	</a>
 		        
 					<?php endif; endforeach;?>
 		        
@@ -80,16 +78,12 @@ if( get_post_type(get_the_ID()) == 'team_member'){
 	        <?php if( get_post_type(get_the_ID()) != 'team_member'):?>
 	        
 	        <div class="link-wrap">
-		        <a class="rm-link" href="<?php echo the_permalink();?>">Read More</a>
+		        <div class="rm-link">Read More »</div>
 	        </div>
 	        
 	        <?php endif;?>
 	        
         </div>
-    
-    <?php if( get_post_type(get_the_ID()) == 'team_member'):?>
-		</a>
-	<?php endif;?>
-    
+	        
     </div>
 </article>

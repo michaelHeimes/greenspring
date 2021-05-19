@@ -1,6 +1,7 @@
 header.header {
 	z-index: 99999;
 	background-color: $white;
+	border-bottom: 1px solid $dark-gray;
 	transition: transform .5s ease;
 		
 	.mobile-button-wrap {
@@ -53,6 +54,7 @@ header.header {
 	ul.menu.dropdown {
 		display: flex;
 		justify-content: flex-end;
+		align-items: center;
 		
 		a {
 			color: $dark-gray;
@@ -63,6 +65,10 @@ header.header {
 		}
 			
 		}
+		
+	&#main-nav {
+		min-height: 70px;
+	}
 	
 	}
 	
@@ -129,6 +135,11 @@ header.header {
 					border-width: 1px 1px 0 1px;
 					border-style: solid;
 					border-color: $white;
+					border-color: #D2E5C2;
+					border-collapse: #D2E5C2;
+					font-weight: bold;
+					text-transform: uppercase;	
+					background-color: #D2E5C2;				
 					
 					&:after {
 						background-image: url(../images/chev-down-gray.svg);
@@ -137,7 +148,7 @@ header.header {
 					&:hover {
 						border-color: $medium-gray;
 						color: $black;
-						background-color: #D2E5C2;
+						background-color: $white;
 						
 					&:after {
 						background-image: url();
@@ -231,8 +242,6 @@ header.header {
 		}
 	
 		ul#main-nav {
-			padding-top: 1.2em;
-			padding-bottom: 1.65em;
     
 			li {
 				margin: 0 1vw;
@@ -240,6 +249,11 @@ header.header {
 				@include breakpoint(xlarge) {
 					margin: 0 1.2em;
 				}
+				
+			&.current-menu-item a,
+			&.current-page-ancestor a {
+				color: $theme-green;
+			}
 				
 			&:first-child {
 				margin-left: 0;

@@ -292,7 +292,7 @@ TYPOGRAPHY
 *********************/
 p,
 .p {
-	font-size: rem-calc(15);
+	font-size: rem-calc(17);
 	line-height: 2.066;
 }
 
@@ -303,8 +303,8 @@ p,
 	letter-spacing: 2px;
 }
 
-a.rm-link {
-	font-size: rem-calc(12);
+.rm-link {
+	font-size: rem-calc(15);
 	font-weight: bold;
 	text-transform: uppercase;
 	letter-spacing: 2px;

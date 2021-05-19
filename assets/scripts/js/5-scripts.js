@@ -19,6 +19,27 @@
 		$('header.header').removeClass('off-canvas-content is-open-right has-transition-push');
 	});	
 	
+	$(window).on("load resize", function() {	
+		// Get an array of all element heights
+		var elementHeights = $('#dropdown-nav>li>a').map(function() {
+			return $(this).width();
+		}).get();
+		
+		// Math.max takes a variable number of arguments
+		// `apply` is equivalent to passing each height as an argument
+		var maxHeight = Math.max.apply(null, elementHeights);
+		
+		// Set each height to the max height
+		$('#dropdown-nav>li>a').width(maxHeight);
+	});
+	
+// 	wrap all ® in <sup> tags
+	$('body :not(script)').contents().filter(function() {
+	    return this.nodeType === 3;
+	}).replaceWith(function() {
+	    return this.nodeValue.replace(/[™®©]/g, '<sup>$&</sup>');
+	});
+	
 	// Slider Module
 	if ( $('.split-slider').length ) {
 		
@@ -285,7 +306,8 @@
 				if ($(this).hasClass('active')) {
 					$(this).removeClass('active');
 				} else {
-					$(this).addClass('active');				
+					$(this).parent().siblings().find('button').removeClass('active');	
+					$(this).addClass('active');	
 				}
 			
 				var query_type = post_filter.find('button.active[data-tax="type"]');

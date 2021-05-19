@@ -21,7 +21,7 @@
 	.gform_wrapper.gf_browser_chrome ul.gform_fields li.gfield span.name_last,
 	.gform_wrapper.gf_browser_chrome ul.gform_fields li.gfield span.name_middle {
 		font-size: rem-calc(17);
-		padding: 0 0px 0 40px;
+		padding: 0;
 		
 		@include breakpoint(tablet) {
 			padding: 0 40px;
@@ -68,10 +68,10 @@
 				}
 					
 				&:nth-child(1) {
-					margin-left: -40px !important;
 					flex: 1 0 100%;
 					
 					@include breakpoint(tablet) {
+						margin-left: -40px !important;
 						flex: 1 0 66.667%;
 					}
 					
@@ -138,6 +138,12 @@
 				min-width: 218px;
 				background-color: transparent;
 				border: 2px solid $white;
+				
+			&:hover {
+				background-color: $white;
+				color: $theme-green;
+			}
+				
 			}
 			
 		}

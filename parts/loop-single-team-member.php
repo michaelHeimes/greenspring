@@ -118,7 +118,7 @@
 					<div class="row">
 						<div class="pipe"></div>
 						<div class="content-wrap">
-							<div class="content-label">Favorite Green Spring Value</div>
+							<div class="content-label">Favorite Greenspring Value</div>
 							<div class="content">
 								<?php echo $favorite_green_spring_value;?>
 							</div>
@@ -129,6 +129,7 @@
 				</div>
 			</div>
 			
+			
 			<?php if( have_rows('quote_box') ):?>
 				<?php while ( have_rows('quote_box') ) : the_row();?>	
 					<?php get_template_part('modules/gray_rectangle_cta');?>
@@ -138,22 +139,63 @@
 			
 			<footer class="article-footer cell">
 				
-				<?php 
-				$args = array(  
-			        'post_type' => 'insight',
-			        'post_status' => 'publish',
-			        'posts_per_page' => 3, 
-			        'order' => 'ASC',
-			    );
+				<?php
+				$featured_insights = get_field('insights');
+				if( $featured_insights ): ?>
+				<section class="insight-grid module">
+					<div class="card-grid grid-x grid-padding-x" data-equalizer data-equalize-on="medium">
+						
+						<div class="cell small-12">
+							<h3>Recent Insights</h3>
+						</div>
+						
+					    <?php foreach( $featured_insights as $post ): 
+					        setup_postdata($post); ?>						
 
-			    $loop = new WP_Query( $args ); 
-			        
-			    while ( $loop->have_posts() ) : $loop->the_post(); 
-			        print the_title(); 
-			    endwhile;
-			
-			    wp_reset_postdata(); 
-			    ?>
+							<?php get_template_part('parts/loop', 'post-card');?>
+						
+						<?php endforeach; ?>
+						
+						<div class="cell text-center">
+							<a class="button outline" aria-label="Insights" href="/insights">
+								View More Insights
+							</a>				
+						</div>
+
+					</div>
+				</section>
+				<?php wp_reset_postdata(); ?>
+				<?php endif; ?>	
+
+				<?php
+				$featured_news = get_field('news');
+				if( $featured_news ): ?>
+				<section class="insight-grid module">
+					<div class="card-grid grid-x grid-padding-x" data-equalizer data-equalize-on="medium">
+						
+						<div class="cell small-12">
+							<h3>Greenspring News</h3>
+						</div>
+						
+					    <?php foreach( $featured_news as $post ): 
+					        setup_postdata($post); ?>						
+
+							<?php get_template_part('parts/loop', 'post-card');?>
+						
+						<?php endforeach; ?>
+						
+						<div class="cell text-center">
+							<a class="button outline" aria-label="News" href="/about/news">
+								View More News
+							</a>				
+						</div>
+
+					</div>
+				</section>
+				<?php wp_reset_postdata(); ?>
+				<?php endif; ?>	
+				
+				<?php get_template_part( 'parts/loop', 'modules' ); ?>
 
 			</footer> <!-- end article footer -->
 			

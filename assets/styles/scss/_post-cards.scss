@@ -1,8 +1,20 @@
 .post-card-shadow {
+	transform: scale(1);
 	box-shadow: 0px 3px 6px 0px rgba(0,0,0,.15);
+	transition: all .4s ease;
 }
 
 .post-card {
+	position: relative;
+	
+	a.permalink {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		z-index: 1;
+	}
 	
 	&:not(.horizontal) {
 		margin-bottom: 2.5rem;
@@ -23,9 +35,9 @@
 	}
 	
 	.tax-icons {
-		margin-top: -24px;
+		top: -24px;
 	    position: relative;
-	    display: flex;
+	    display: inline-flex;
 	    flex-direction: row;
 	    flex-wrap: wrap;
 	    
@@ -37,6 +49,8 @@
 		    justify-content: center;
 		    align-items: center;
 		    margin: 5px;
+		    position: relative;
+			z-index: 2;
 	    }
 	    
 	}
@@ -59,7 +73,7 @@
 			}
 			
 			h3 {
-				padding-top: 1.65em;
+				padding-top: .7em;
 			}
 			
 			.link-wrap {
@@ -75,4 +89,11 @@
     }
 }
 	
+}
+
+.post-type-archive-team_member {
+	.post-card-shadow:hover {
+		transform: scale(1.025);
+		box-shadow: 0px 10px 14px 0px rgba(0,0,0,.15);
+	}
 }

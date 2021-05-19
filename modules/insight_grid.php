@@ -15,7 +15,7 @@
 		        'post_type' => 'insight',
 		        'post_status' => 'publish',
 		        'posts_per_page' => 9, 
-		        'order' => 'ASC',
+		        'order' => 'DESC',
 				'tax_query' => array(
 			        array(
 			            'taxonomy' => 'insight_type',

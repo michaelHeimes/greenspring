@@ -9,7 +9,7 @@
  ?>
  
  
- 				<div class="pre-footer-cta green-bg">
+ 				<div class="pre-footer-cta green-bg" style="background-image: url(<?php the_field('nf_background_image', 'option');?>)">
 	 				<div class="grid-container">
 	 					<div class="grid-x grid-padding-x">
 		 					<div class="cell">

@@ -25,14 +25,21 @@
 			        'post_type' => 'team_member',
 			        'post_status' => 'publish',
 			        'posts_per_page' => 9, 
-			        'order' => 'ASC',
 					'tax_query' => array(
 				        array(
 				            'taxonomy' => 'team_member_type',
 				            'field' => 'term_id',
 				            'terms' => $term_ID,
 				        )
-				    )
+				    ),
+				    
+					'orderby' => 'meta_value',
+					'order' => 'ASC',
+					'meta_key' => 'last_name',
+					'meta_compare' => 'EXISTS',
+						
+
+				    
 			    );
 	
 			    $loop = new WP_Query( $args ); 

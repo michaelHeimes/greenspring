@@ -30,9 +30,19 @@
 						width: 100%; 
 						
 						.inner {
+							position: relative;
 							margin: 1.4em 5px;
 							display: flex;			
 							box-shadow: 0px 3px 6px 0px rgba(0,0,0,.15);
+							
+							a.permalink {
+								position: absolute;
+								top: 0;
+								left: 0;
+								right: 0;
+								bottom: 0;
+								z-index: 1;
+							}
 								
 							.left {
 								position: relative;
@@ -53,7 +63,7 @@
 							}
 							
 						    .tax-icons {
-							    padding: 1em 0;
+							    padding: 2.5em 0;
 							    margin-top: 0;
 							    margin-left: -25px;
 							    display: flex;
@@ -97,7 +107,7 @@
 		}
 		
 	&.tax-private-wealth-management {
-		a.rm-link {
+		.rm-link {
 			color: $theme-green;
 		}
 		
@@ -107,7 +117,7 @@
 	}
 	
 	&.tax-corporate-retirement {
-		a.rm-link {
+		.rm-link {
 			color: $theme-blue;
 		}
 		

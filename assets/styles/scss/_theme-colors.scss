@@ -8,6 +8,12 @@
 			background-color: rgba( $theme-green, .3 );	
 			a.button {
 				color: $theme-green;
+				
+			&:hover {
+				background-color: $theme-green;
+				color: $white;
+			}
+				
 			}		
 		}		
 	}
@@ -50,7 +56,7 @@
 		
 	}
 	
-	a.rm-link {
+	.rm-link {
 		color: $theme-green;
 	
 		&:hover {
@@ -133,6 +139,12 @@ body.page-child.theme-color-green {
 			background-color: rgba( $theme-blue, .3 );	
 			a.button {
 				color: $theme-blue;
+				
+			&:hover {
+				background-color: $theme-blue;
+				color: $white;
+			}
+				
 			}		
 		}		
 	}
@@ -178,7 +190,7 @@ body.page-child.theme-color-green {
 		
 	}
 	
-	a.rm-link {
+	.rm-link {
 		color: $theme-blue;
 		
 		&:hover {
@@ -261,6 +273,12 @@ body.page-child.theme-color-navy {
 			background-color: rgba( $theme-purple, .3 );	
 			a.button {
 				color: $theme-purple;
+				
+			&:hover {
+				background-color: $theme-purple;
+				color: $white;
+			}
+				
 			}		
 		}		
 	}
@@ -274,7 +292,7 @@ body.page-child.theme-color-navy {
 			background-color: $theme-purple;
 			
 			&:hover {
-				background-color: scale-color($theme-purple, $lightness: -15%);
+				background-color: #2f4576;
 			}
 			
 		}
@@ -284,7 +302,7 @@ body.page-child.theme-color-navy {
 		a {
 			
 			&:hover {
-				color: scale-color($theme-purple, $lightness: -15%);
+				color: #2f4576;
 			}
 
 		}
@@ -302,7 +320,7 @@ body.page-child.theme-color-navy {
 		
 	}
 	
-	a.rm-link {
+	.rm-link {
 		color: $theme-purple;
 	
 		&:hover {

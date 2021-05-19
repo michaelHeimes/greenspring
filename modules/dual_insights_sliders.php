@@ -26,7 +26,7 @@
 						        'post_type' => 'insight',
 						        'post_status' => 'publish',
 						        'posts_per_page' => -1, 
-						        'order' => 'ASC',
+						        'order' => 'DESC',
 								'tax_query' => array(
 							        array(
 							            'taxonomy' => 'insight_type',
@@ -52,8 +52,10 @@
 							        <?php endif; ?>
 							        
 								        <article id="post-<?php the_ID(); ?>" <?php post_class('post-card horizontal'); ?> role="article">
-
+									        
 									        <div class="inner post-card-shadow">
+										        
+												<a class="permalink" href="<?php echo the_permalink();?>"></a>
 									        
 										        <div class="left" style="position: relative;">
 											        <?php 
@@ -71,12 +73,13 @@
 											        
 											        foreach ($insight_terms as $term): 
 													if ( $term->parent != 0 ):
-													$icon = get_field('icon', $term);									    
+													$link = get_term_link($term);
+													$icon = get_field('icon', $term);								
 										        ?>		
 										        
-										        	<div class="icon">
+										        	<a href="<?php echo $link;?>" class="icon">
 											        	<img src="<?php echo esc_url($icon['url']); ?>" alt="<?php echo esc_attr($icon['alt']); ?>" />
-										        	</div>
+										        	</a>
 										        
 										        <?php endif; endforeach; ?>										       
 											        
@@ -85,9 +88,7 @@
 										        <div class="right">
 											        <h3><?php the_title();?></h3>
 											        
-											        <div>
-												        <a class="rm-link" href="<?php echo the_permalink();?>">Read More</a>
-											        </div>
+												    <div class="rm-link">Read More »</div>
 											        
 										        </div>
 										        
@@ -107,7 +108,7 @@
 						<div class="bottom grid-x grid-padding-x">
 							
 							<div class="btn-wrap cell shrink">
-								<a href="#" class="button">View More Insights</a>
+								<a href="/insights" class="button">View More Insights</a>
 							</div>
 						
 							<div class="di-slider-nav-wrap cell shrink">
@@ -185,7 +186,7 @@
 						        'post_type' => 'insight',
 						        'post_status' => 'publish',
 						        'posts_per_page' => -1, 
-						        'order' => 'ASC',
+						        'order' => 'DESC',
 								'tax_query' => array(
 							        array(
 							            'taxonomy' => 'insight_type',
@@ -211,29 +212,42 @@
 							        <?php endif; ?>
 							        
 								        <article id="post-<?php the_ID(); ?>" <?php post_class('post-card horizontal'); ?> role="article">
-									        
+
 									        <div class="inner post-card-shadow">
 										        
+												<a class="permalink" href="<?php echo the_permalink();?>"></a>
+									        
 										        <div class="left" style="position: relative;">
 											        <?php 
 													$image = get_field('archive_card_image');
 													if( !empty( $image ) ): ?>
 														<div class="bg" style="background-image: url(<?php echo esc_url($image['url']); ?>)"></div>
 													<?php endif; ?>
-											        
-											        <div class="tax-icons">
-												        
-											        </div>
-											        
+											        											        
 										        </div>
+										        
+										        <div class="tax-icons">
+											        
+												<?php
+											        $insight_terms = get_the_terms( $post->ID , 'insight_type' );
+											        
+											        foreach ($insight_terms as $term): 
+													if ( $term->parent != 0 ):
+													$link = get_term_link($term);
+													$icon = get_field('icon', $term);								
+										        ?>		
+										        
+										        	<a href="<?php echo $link;?>" class="icon">
+											        	<img src="<?php echo esc_url($icon['url']); ?>" alt="<?php echo esc_attr($icon['alt']); ?>" />
+										        	</a>
+										        
+										        <?php endif; endforeach; ?>										       
+											        
+										        </div>										  
 										        
 										        <div class="right">
 											        <h3><?php the_title();?></h3>
-											        
-											        <div>
-												        <a class="rm-link" href="<?php echo the_permalink();?>">Read More</a>
-											        </div>
-											        
+												    <div class="rm-link">Read More »</div>
 										        </div>
 										        
 									        </div>
@@ -252,7 +266,7 @@
 						<div class="bottom grid-x grid-padding-x">
 							
 							<div class="btn-wrap cell shrink">
-								<a href="#" class="button">View More Insights</a>
+								<a href="/insights" class="button">View More Insights</a>
 							</div>
 						
 							<div class="di-slider-nav-wrap cell shrink">

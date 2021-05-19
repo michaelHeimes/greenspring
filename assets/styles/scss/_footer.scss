@@ -20,6 +20,11 @@ footer.footer {
 	
 	a {
 		color: $white;
+	
+	&:hover {
+		text-decoration: underline;
+	}
+		
 	}
 	
 	.footer-top {
@@ -56,6 +61,12 @@ footer.footer {
 				>div {
 					a {
 						background-color: $light-gray;
+						transition: opacity .25s ease;
+						
+					&:hover {
+						opacity: .75;
+					}
+						
 					}
 				}
 			}
@@ -104,6 +115,7 @@ footer.footer {
 					
 					li a {
 						font-size: rem-calc(12);
+						text-indent: 16px;
 					}
 					
 				}

@@ -2,6 +2,7 @@
 /**
  * Template part for displaying a single post
  */
+ 
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(''); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
@@ -10,14 +11,22 @@
 		<div class="grid-x grid-padding-x">
 			<div class="cell small-12 tablet-10 tablet-offset-1 xlarge-8 xlarge-offset-2">
 							
-				<header class="article-header">						
+				<header class="article-header">				
+					
+					<?php if( is_singular('insight') || is_singular('news_post')):?>
+						<?php 
+						$image = get_field('archive_card_image');
+						if( !empty( $image ) ): ?>
+						    <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+						<?php endif; ?>
+					<?php endif; ?>		
 					
 					<?php if ( is_singular('insight') ):?>
 						<?php get_template_part( 'parts/insight-content', 'byline' ); ?>
 					<?php endif;?>
 
 					<?php if ( is_singular('news_post') ):?>
-						<?php get_template_part( 'parts/news-content', 'byline' ); ?>
+						<?php get_template_part( 'parts/content', 'news-byline' ); ?>
 					<?php endif;?>
 			
 					<h1 class="entry-title single-title" itemprop="headline"><?php the_title(); ?></h1>
@@ -101,9 +110,125 @@
 							</div>
 						</div>
 					</div>
-					
+										
 				</footer> <!-- end article footer -->
 	
+			</div>
+			
+			<div class="cell small-12">
+				<section class="insight-grid module">
+					<div class="card-grid grid-x grid-padding-x" data-equalizer data-equalize-on="medium">
+						
+						<?php if( get_post_type() === 'insight'):?>
+						
+							<div class="cell small-12">
+								<h3>Recent Insights</h3>
+							</div>
+	
+							<?php 
+								
+							$insight_terms = get_the_terms($post->ID, 'insight_type');
+													
+							if( $insight_terms ) {
+	         
+							    $insight_termnames[] = 0;
+							                     
+							    foreach( $insight_terms as $insight_term ) {  
+							                 
+							        $insight_names[] = $insight_term->slug;
+							             
+							    }
+							     
+							}
+								
+							$args = array(  
+						        'post_type' => 'insight',
+						        'post_status' => 'publish',
+						        'posts_per_page' => 3, 
+						        'order' => 'DESC',
+						        'post__not_in' => array( get_the_ID() ),
+							    'tax_query' => array(
+							        array(
+							            'taxonomy' => 'insight_type',
+							            'field'    => 'slug',
+							            'terms'    => $insight_names,
+							        ),
+							    ),
+						    );
+			
+						    $loop = new WP_Query( $args ); 
+						        
+						    while ( $loop->have_posts() ) : $loop->the_post(); 
+						        get_template_part('parts/loop', 'post-card');
+						    endwhile;
+						
+						    wp_reset_postdata(); 
+						    ?>
+						    
+							<div class="cell text-center">
+								<a class="button outline" aria-label="Insights" href="/insights">
+									View More Insights
+								</a>				
+							</div>
+							
+						<?php endif;?>
+
+						<?php if( get_post_type() === 'news_post'):?>
+						
+							<div class="cell small-12">
+								<h3>Recent Greenspring News</h3>
+							</div>
+	
+							<?php 
+								
+							$news_terms = get_the_terms($post->ID, 'news_types');
+													
+							if( $news_terms ) {
+	         
+							    $news_termnames[] = 0;
+							                     
+							    foreach( $news_terms as $news_term ) {  
+							                 
+							        $news_names[] = $news_term->slug;
+							             
+							    }
+							    							     
+							}
+								
+							$args = array(  
+						        'post_type' => 'news_post',
+						        'post_status' => 'publish',
+						        'posts_per_page' => 3, 
+						        'order' => 'DESC',
+						        'post__not_in' => array( get_the_ID() ),
+							    'tax_query' => array(
+							        array(
+							            'taxonomy' => 'news_types',
+							            'field'    => 'slug',
+							            'terms'    => $news_names,
+							        ),
+							    ),
+						    );
+			
+						    $loop = new WP_Query( $args ); 
+						        
+						    while ( $loop->have_posts() ) : $loop->the_post(); 
+						        get_template_part('parts/loop', 'post-card');
+						    endwhile;
+						
+						    wp_reset_postdata(); 
+						    ?>
+						    
+							<div class="cell text-center">
+								<a class="button outline" aria-label="Insights" href="/news">
+									View More News
+								</a>				
+							</div>
+							
+						<?php endif;?>
+					    
+					</div>
+				</section>									
 			</div>
 			
 		</div>
