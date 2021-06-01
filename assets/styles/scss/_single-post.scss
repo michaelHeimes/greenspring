@@ -35,7 +35,6 @@
 		border-bottom: 1px solid $dark-gray;
 		padding-top: 3.15em;
 		padding-bottom: 1.6em;
-		margin-bottom: 5.9em;
 		
 		.left,
 		.right {
@@ -94,14 +93,19 @@
 				margin: 0;
 			}
 		}
-		
-		.post-disclaimer {
-			p {
-				margin-top: .5em;
-				margin-bottom: .5em;
-			}
+				
+	}
+	
+	.post-disclaimer {
+		margin-top: 1em;
+		margin-bottom: 5.9em;
+
+		p {
+			font-size: rem-calc(15);
+			line-height: 1.5;
+			margin-top: .5em;
+			margin-bottom: .5em;
 		}
-		
 	}
 	
 }

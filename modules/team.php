@@ -24,7 +24,7 @@
 				$args = array(  
 			        'post_type' => 'team_member',
 			        'post_status' => 'publish',
-			        'posts_per_page' => 9, 
+			        'posts_per_page' => 999, 
 					'tax_query' => array(
 				        array(
 				            'taxonomy' => 'team_member_type',

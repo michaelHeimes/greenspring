@@ -22,8 +22,7 @@
 					<?php else:?>
 						<h1><?php echo $post_type_object->label ?></h1>
 					<?php endif;?>
-				
-					
+										
 				<?php elseif (is_post_type_archive('news_post')):?>
 				
 					<?php if( $alternative_title = get_field('news_archive_heading', 'option') ):?>
@@ -33,7 +32,11 @@
 					<?php endif;?>
 					
 				<?php endif;?>
-								
+				
+			<?php elseif( is_404() ):?>
+				<div class="cell small-12">
+					<h1><?php _e( '404 - Not Found', 'jointswp' ); ?></h1>			
+				</div>		
 				
 			<?php elseif ( is_page_template('page-templates/page-insights.php') ):?>
 			

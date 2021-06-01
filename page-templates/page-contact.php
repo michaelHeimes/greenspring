@@ -71,6 +71,16 @@ get_header(); ?>
 							    		
 						    		</div>
 						    		
+						    		<div class="cell small-12 tablet-6">
+							    		
+							    		<h4>Hours</h4>
+
+							    		<div class="info-wrap">
+								    		<div><?php the_field('hours', 'option');?></div>
+							    		</div>						
+							    		
+						    		</div>						    		
+						    		
 					    		</div>
 				    		</div>
 

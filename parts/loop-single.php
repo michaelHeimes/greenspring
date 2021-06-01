@@ -39,7 +39,9 @@
 				</section> <!-- end article section -->
 				
 				<footer class="article-footer cell">
+					
 					<div class="grid-x grid-padding-x">
+						<div class="break"></div>
 						<div class="left cell small-12 medium-6">
 						<?php
 						$authors = get_field('author');
@@ -103,15 +105,16 @@
 									
 									<script async src="https://static.addtoany.com/menu/page.js"></script>
 																			
-								</div>
-								
-								<div class="post-disclaimer cell shrink text-right"><?php the_field('insights_and_news_disclaimer', 'option');?></div>
-									
+								</div>									
 							</div>
 						</div>
 					</div>
-										
+															
 				</footer> <!-- end article footer -->
+	
+				<div class="grid-x grid-padding-x">
+					<div class="post-disclaimer cell small-12"><?php the_field('insights_and_news_disclaimer', 'option');?></div>
+				</div>
 	
 			</div>
 			

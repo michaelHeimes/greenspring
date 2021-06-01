@@ -135,11 +135,10 @@ header.header {
 					border-width: 1px 1px 0 1px;
 					border-style: solid;
 					border-color: $white;
-					border-color: #D2E5C2;
-					border-collapse: #D2E5C2;
 					font-weight: bold;
 					text-transform: uppercase;	
-					background-color: #D2E5C2;				
+					background-color: #D2E5C2;	
+					border-color: #D2E5C2;			
 					
 					&:after {
 						background-image: url(../images/chev-down-gray.svg);
@@ -161,6 +160,8 @@ header.header {
 				ul.is-dropdown-submenu {
 					min-width: 100%;
 					border-top: 0;
+					background-color: #D2E5C2;	
+					border-color: #D2E5C2;	
 					
 					li {
 						a {
@@ -169,7 +170,7 @@ header.header {
 							
 						&:hover {
 							color: $black;
-							background-color: #D2E5C2;
+							background-color: $white;
 						}
 							
 						}
