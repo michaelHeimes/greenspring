@@ -56,11 +56,6 @@
 							$term_ID = $tax[0]->term_id;
 							$term_name = $tax[0]->name;	
 							$term_link = get_term_link( $term_ID );
-					    	$insight_terms = get_terms( array(
-							    'taxonomy' => 'insight_type',
-							    'hide_empty' => false,
-							    'parent' => $term_ID,
-							) );
 						?>
 						
 							<li class="jump-link-wrap <?php echo $term_slug;?>">

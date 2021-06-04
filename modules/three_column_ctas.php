@@ -2,7 +2,7 @@
 	<div class="color-bg light-gray-bg">
 		<div class="grid-container">
 			<div class="header grid-x grid-margin-x">
-				<?php if( $heading = get_field('heading') ):?>
+				<?php if( $heading = get_sub_field('heading') ):?>
 				<div class="cell">
 					<div class="inner">
 						<svg id="Group_311" data-name="Group 311" xmlns="http://www.w3.org/2000/svg" width="42.016" height="62.291" viewBox="0 0 42.016 62.291">
