@@ -12,12 +12,26 @@
 	$('ul#dropdown-nav a[href="#"]').css('cursor', 'default');
 	
 	$(document).on('click', 'a#menu-toggle', function(){
-		$('header.header').addClass('off-canvas-content is-open-right has-transition-push');
+		
+		if ( $(this).hasClass('clicked') ) {
+			$(this).removeClass('clicked');
+			$('header.header').removeClass('off-canvas-content is-open-right has-transition-push');
+		
+		} else {
+		
+			$(this).addClass('clicked');
+			$('header.header').addClass('off-canvas-content is-open-right has-transition-push');
+		
+		}
+		
 	});
 
 	$(document).on('click', '.js-off-canvas-overlay', function(){
 		$('header.header').removeClass('off-canvas-content is-open-right has-transition-push');
 	});	
+	
+	
+
 	
 	$(window).on("load resize", function() {	
 		// Get an array of all element heights
