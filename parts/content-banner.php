@@ -1,4 +1,5 @@
-<div class="page-banner">
+<?php $bg_position = get_field('background_image_horizontal_position');?>
+<div class="page-banner bg-position-<?php if($bg_position):?><?php echo $bg_position;?><?php else:?>center<?php endif;?>">
 	<?php if (is_post_type_archive('news_post')):?>
 		<div class="bg" style="background-image: url(<?php the_field('news_archive_banner_image', 'option');?>);"></div>
 	<?php elseif (is_post_type_archive('team_member')):?>
@@ -91,7 +92,11 @@
 						<ul class="breadcrumbs">
 							<li><a href="<?php echo get_permalink( $post->post_parent ); ?>"><?php echo get_the_title( $post->post_parent ); ?></a></li>
 							<li class="underlined">
-								<?php the_title();?>
+								<?php if( $alternative_title = get_field('alternative_title') ):?>
+									<?php echo $alternative_title;?>
+								<?php else:?>
+									<?php the_title();?>
+								<?php endif;?>
 							</li>
 						</ul>
 					</nav>	
@@ -105,7 +110,11 @@
 							<li><a href="/about/">About</a></li>
 							<li><a href="/about/team/">Team</a></li>
 							<li class="underlined">
-								<?php the_title();?>
+								<?php if( $alternative_title = get_field('alternative_title') ):?>
+									<?php echo $alternative_title;?>
+								<?php else:?>
+									<?php the_title();?>
+								<?php endif;?>
 							</li>
 						</ul>
 					</nav>	

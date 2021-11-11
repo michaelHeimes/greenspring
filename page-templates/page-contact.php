@@ -17,18 +17,42 @@ get_header(); ?>
 			    	<?php get_template_part( 'parts/loop', 'page' ); ?>
 			    
 			    <?php endwhile; endif; ?>		
-			    
-			    <section class="form module">
+
+
+			    <section class="form-header module no-bottom-padding">
 				    <div class="grid-container">
 					    <div class="grid-x grid-padding-x">
 						    <div class="cell">
 						    	<h2><?php the_field('form_heading');?></h2>
 						    </div>
+							<?php if( have_rows('book_cta') ):?>
+								<?php while ( have_rows('book_cta') ) : the_row();?>	
+			
+							    <div class="cell">
+								    <div class="copy-wrap">
+									    <?php the_sub_field('copy');?>
+								    </div>
+									<?php 
+									$link = get_sub_field('link');
+									if( $link ): 
+									    $link_url = $link['url'];
+									    $link_title = $link['title'];
+									    $link_target = $link['target'] ? $link['target'] : '_self';
+									    ?>
+									<div class="link-wrap">
+									    <a class="button" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a>
+									</div>
+									<?php endif; ?>
+							    </div>
+			
+								<?php endwhile;?>
+							<?php endif;?>						    
 					    </div>
 				    </div>
-						    
-						<?php gravity_form( 1, false, false, false, '', true );?>
-
+			    </section>
+			    
+			    <section class="form module">
+					<?php gravity_form( 1, false, false, false, '', true );?>
 			    </section>
 
 			    <section class="module">

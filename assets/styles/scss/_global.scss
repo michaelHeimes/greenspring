@@ -53,6 +53,25 @@ main.main,
 		}
 		
 	}
+	
+&.bg-position-center {
+	.bg {
+		background-position: center center;
+	}
+}
+	
+&.bg-position-left {
+	.bg {
+		background-position: 0% 50%;
+	}
+}
+
+&.bg-position-right {
+	.bg {
+		background-position: 100% 50%;
+	}
+}
+	
 }
 
 .bg {

@@ -36,15 +36,15 @@
 	$(window).on("load resize", function() {	
 		// Get an array of all element heights
 		var elementHeights = $('#dropdown-nav>li>a').map(function() {
-			return $(this).width();
+			return $(this).outerWidth();
 		}).get();
 		
 		// Math.max takes a variable number of arguments
 		// `apply` is equivalent to passing each height as an argument
-		var maxHeight = Math.max.apply(null, elementHeights);
-		
+		var linkWidth = Math.max.apply(null, elementHeights);
+				
 		// Set each height to the max height
-		$('#dropdown-nav>li>a').width(maxHeight);
+		$('#dropdown-nav>li>a').css('min-width', linkWidth);
 	});
 	
 // 	wrap all ® in <sup> tags
