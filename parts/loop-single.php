@@ -223,7 +223,7 @@
 						    ?>
 						    
 							<div class="cell text-center">
-								<a class="button outline" aria-label="Insights" href="/news">
+								<a class="button outline" aria-label="Insights" href="/about/news">
 									View More News
 								</a>				
 							</div>

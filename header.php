@@ -107,9 +107,8 @@
 													<a class="bn-col" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>">
 														
 														<div class="top">
-														
-															<div class="img" style="background-image: url(<?php the_sub_field('image');?>);"></div>
-														
+															<div class="img mobile hide-for-tablet" style="background-image: url(<?php the_sub_field('mobile_image');?>);"></div>
+															<div class="img show-for-tablet" style="background-image: url(<?php the_sub_field('image');?>);"></div>														
 														</div>
 														
 													    <div class="green-bg bottom">
@@ -148,7 +147,8 @@
 													<a class="bn-col" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>">
 														
 														<div class="top">
-															<div class="img" style="background-image: url(<?php the_sub_field('image');?>);"></div>
+															<div class="img mobile hide-for-tablet" style="background-image: url(<?php the_sub_field('mobile_image');?>);"></div>
+															<div class="img show-for-tablet" style="background-image: url(<?php the_sub_field('image');?>);"></div>
 														</div>
 		
 													    <div class="blue-bg bottom" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>">
@@ -186,7 +186,8 @@
 													<a class="bn-col" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>">
 														
 														<div class="top">
-															<div class="img" style="background-image: url(<?php the_sub_field('image');?>);"></div>
+															<div class="img mobile hide-for-tablet" style="background-image: url(<?php the_sub_field('mobile_image');?>);"></div>
+															<div class="img show-for-tablet" style="background-image: url(<?php the_sub_field('image');?>);"></div>
 														</div>
 														
 													    <div class="purple-bg bottom">
@@ -218,7 +219,7 @@
 							</div>
 							
 							<div class="heading-wrap grid-container">
-								<div class="bg hide-for-tablet" style="background-image: url(<?php the_field('banner_background_image');?>);">
+								<div class="bg hide-for-tablet" style="background-image: url(<?php the_field('mobile_banner_background_image');?>);">
 									<div class="mask"></div>
 								</div>
 								<div class="grid-x grid-padding-x align-middle">
